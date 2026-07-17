@@ -43,10 +43,11 @@ Tuned recipe (validation-only, sweeps 1–3): **lr .005, aux_weight 2.0, gate_bi
 
 ## `[TO-FILL]` in draft (blocked on user/runs)
 
-1. **GitHub push** → repo URL + commit hash (gates prereg freeze; manifests all say git_hash "no-git").
-2. **Freeze PREREGISTRATION.md** (H5 already written in; §2 δ-table needs paste from `experiments/figures/eda/delta_table.md`; document per-dataset tuned recipes in §5) → commit.
-3. **Confirmatory runs seeds 10–19**, all datasets, locked recipes → replaces every `[PILOT]`; also compute: H4 Spearman (gate vs leave-branch-out, `telemetry/attribution.py h4_correlation`), exact Pubmed H5 p, final Stouffer pooled p, Disease randomization ρ exact value.
+1. ~~GitHub push~~ DONE 2026-07-17: https://github.com/Mahadi5577/Nema-Q (private), initial commit `dd61326`.
+2. ~~Freeze PREREGISTRATION.md~~ DONE: §1–§6 frozen at `dd61326`; freeze header + §7 amendment recorded. Hash filled in draft §4.2 + Declarations (Zenodo DOI still TO-FILL at submission).
+3. **Confirmatory runs seeds 10–19**, all datasets, locked recipes → replaces every `[PILOT]`; **Colab must `git clone` the repo and run from the clone** so manifests record real git hash (manifest.py runs `git rev-parse HEAD` in cwd). Also compute: H4 Spearman (gate vs leave-branch-out, `telemetry/attribution.py h4_correlation`), exact Pubmed H5 p, final Stouffer pooled p, Disease randomization ρ exact value.
 4. AI-disclosure statement (Stage 5 disclosure mode).
+5. Flip repo private → public at submission (prereg verifiability) + Zenodo archive DOI.
 
 ## Key decisions log
 

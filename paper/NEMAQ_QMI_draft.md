@@ -109,7 +109,7 @@ We evaluate on Cora, Citeseer, Pubmed (Planetoid public splits) and Disease [Cha
 
 ### 4.2 Hypotheses
 
-Preregistered before the confirmatory runs (repository commit `[TO-FILL: hash]`):
+Preregistered before the confirmatory runs (repository commit `dd61326`, frozen 2026-07-17):
 
 - **H1 (geometry, two-part).** (a) Direction: hyperbolic > parameter-matched Euclidean (NEMA-Q vs. NEMA-E), pooled across datasets by Stouffer's Z over per-dataset one-sided Wilcoxon tests. The pooled test is primary because the conference pilot showed single-dataset comparisons are underpowered at n=10 seeds (Cora paired d=0.44 implies ~40 seeds for 80% power alone). (b) Mechanism: paired gain decreases with δ (Spearman over datasets). Part (b) is the standard literature claim; we register both so that either can fail independently. *Falsifiers:* pooled p ≥ 0.05 (a); no negative δ–gain correlation (b).
 - **H2 (quantum vs. surrogate).** NEMA-Q > NEMA-C at ≤5 labels per class, with the gap closing at standard label rates; paired Wilcoxon per (dataset, label rate). *Falsifier:* surrogate matches the PQC at all label rates.
@@ -238,7 +238,7 @@ Component accounting turns a hybrid model from a monolithic claim into an audita
 
 ## Declarations
 
-**Data availability.** All datasets are public (Planetoid; Disease from the HGCN repository). Code, configuration files, run manifests, and the preregistration document are available at `[TO-FILL: repository URL + archived DOI]`.
+**Data availability.** All datasets are public (Planetoid; Disease from the HGCN repository). Code, configuration files, run manifests, and the preregistration document are available at https://github.com/Mahadi5577/Nema-Q (preregistration frozen at commit `dd61326`; archived DOI `[TO-FILL: Zenodo deposit at submission]`).
 
 **Author contributions (CRediT).** MD Nurol Amin: Conceptualization, Methodology, Software, Investigation, Formal analysis, Writing — original draft, Writing — review & editing.
 

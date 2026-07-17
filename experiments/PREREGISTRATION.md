@@ -1,8 +1,10 @@
-# NEMA-Q Pre-Registration (Phase 0 — FILL AND FREEZE BEFORE PHASE 5)
+# NEMA-Q Pre-Registration
 
-> Commit this file, record the commit hash, and do not edit after the
-> evaluation matrix starts. Amendments go in §7 with dates, never by editing
-> §1–§6. This document is the paper's registered-analysis artifact.
+> **FROZEN 2026-07-17.** §1–§6 are frozen as committed in
+> `dd61326` at https://github.com/Mahadi5577/Nema-Q (initial commit).
+> No edits to §1–§6 after this point; amendments go in §7 with dates.
+> This document is the paper's registered-analysis artifact for the
+> confirmatory runs (seeds 10–19).
 
 ## 1. Hypotheses (falsifiable, with pre-declared falsifiers)
 
@@ -113,4 +115,9 @@ buried footnote.
 
 ## 7. Amendments (dated, append-only)
 
-- (none)
+- 2026-07-17: Freeze recorded. §1–§6 content is identical to commit
+  `dd61326` (repository initial commit); this header/amendment note is the
+  only post-freeze edit. All pilot results (seeds 0–9) predate the freeze
+  and are labeled exploratory in the paper; confirmatory runs (seeds 10–19)
+  must execute from a clone of the frozen repository so run manifests
+  record the true git hash (pilot manifests say "no-git").
