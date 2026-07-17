@@ -1,7 +1,7 @@
 __pycache__/
 *.pyc
 .venv/
-data/
+/data/
 experiments/runs/
 *.egg-info/
 .pytest_cache/
