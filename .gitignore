@@ -6,6 +6,7 @@ experiments/runs/
 *.egg-info/
 .pytest_cache/
 extracted_proposal.txt
+NEMA_Q_colab_final.ipynb
 
 # large local artifacts / exports
 *.zip

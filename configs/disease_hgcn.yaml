@@ -4,4 +4,4 @@
 inherit: base.yaml
 data: { name: disease, split: ratio }
 model: { name: hgcn, dropout: 0.2 }
-train: { lr: 0.05, weight_decay: 0.00005 }
+train: { lr: 0.05, weight_decay: 0.00005, patience: 200 }

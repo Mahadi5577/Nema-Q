@@ -4,5 +4,5 @@
 # -> 0.9148 +/- 0.0048 (seeds 0-9).
 inherit: base.yaml
 data: { name: disease, split: ratio }
-train: { lr: 0.05, weight_decay: 0.0005 }
+train: { lr: 0.05, weight_decay: 0.0005, patience: 200 }
 model: { dropout: 0.5 }

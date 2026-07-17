@@ -121,3 +121,12 @@ buried footnote.
   and are labeled exploratory in the paper; confirmatory runs (seeds 10–19)
   must execute from a clone of the frozen repository so run manifests
   record the true git hash (pilot manifests say "no-git").
+- 2026-07-17 (transcription fix, same day as freeze): the Disease tuned
+  recipes in §5 and the committed disease yamls omitted `patience: 200`,
+  which the executed Colab sweep and pilot test reads actually used
+  (sweep cells select and evaluate all Disease models with patience 200;
+  all other datasets use the default patience 100). The yamls are corrected
+  to record what was run; no selection decision changed. Disease locked
+  recipes therefore read: GCN lr .05/wd 5e-4/dr .5, GAT lr .05/wd 5e-5/dr .5,
+  HGCN lr .05/wd 5e-5/dr .2, NEMA-Q/E/R lr .05/aux .3/gate_bias −2 —
+  each with patience 200.

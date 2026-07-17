@@ -6,4 +6,4 @@
 inherit: base.yaml
 data: { name: disease, split: ratio }
 model: { name: nemaq, gate_bias_init: -2.0 }
-train: { lr: 0.05, aux_weight: 0.3 }
+train: { lr: 0.05, aux_weight: 0.3, patience: 200 }
