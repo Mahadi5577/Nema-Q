@@ -1,0 +1,4 @@
+# NEMA-R control on pubmed (H5: frozen-random vs trained PQC).
+inherit: ../base.yaml
+data: { name: pubmed }
+model: { name: nemaq, quantum_mode: frozen_random }

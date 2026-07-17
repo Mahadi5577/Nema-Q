@@ -1,0 +1,57 @@
+{
+  "timestamp": "2026-07-16T07:27:32",
+  "git_hash": "no-git",
+  "seed": 0,
+  "config": {
+    "data": {
+      "name": "cora",
+      "root": "data",
+      "split": "public",
+      "labels_per_class": 5,
+      "split_seed": 0
+    },
+    "model": {
+      "name": "gcn",
+      "hidden": 64,
+      "dropout": 0.5,
+      "geometry": "hyperbolic",
+      "quantum_mode": "pqc",
+      "n_qubits": 4,
+      "q_depth": 2,
+      "branch_dim": 16,
+      "fused_dim": 32,
+      "curvature": 1.0,
+      "learnable_curvature": true,
+      "shots": null
+    },
+    "train": {
+      "lr": 0.01,
+      "weight_decay": 0.0005,
+      "epochs": 500,
+      "patience": 100
+    },
+    "deterministic": true,
+    "device": "cuda"
+  },
+  "env": {
+    "python": "3.12.13",
+    "torch": "2.11.0+cu128",
+    "torch_geometric": "2.8.0",
+    "geoopt": "0.5.1",
+    "pennylane": "0.45.1",
+    "numpy": "2.0.2"
+  },
+  "metrics": {
+    "val_acc": 0.8100000619888306,
+    "test_acc": 0.8210000395774841,
+    "epochs_run": 140
+  },
+  "telemetry_summary": {
+    "model": {
+      "final_grad_var": 1.0431702435198531e-07,
+      "min_grad_var": 4.2315640769174934e-08,
+      "steps_below_h3_floor": 140,
+      "n_steps": 140
+    }
+  }
+}

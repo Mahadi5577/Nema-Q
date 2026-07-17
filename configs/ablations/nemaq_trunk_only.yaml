@@ -1,0 +1,9 @@
+# Diagnostic: bypass trunk + fusion + head with NO exotic branches.
+# If this fails to reach plain-GCN accuracy (~0.82 Cora), the residual
+# scaffold itself (projection/head/recipe) is leaking performance and the
+# gap between NEMA-Q and GCN is a scaffold artifact, not a branch effect.
+inherit: ../base.yaml
+model:
+  name: nemaq
+  geometry: "off"
+  quantum_mode: "off"

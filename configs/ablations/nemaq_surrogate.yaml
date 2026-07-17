@@ -1,0 +1,6 @@
+# NEMA-C: dequantization control — the headline comparison partner for NEMA-Q.
+inherit: ../base.yaml
+model:
+  name: nemaq
+  geometry: hyperbolic
+  quantum_mode: surrogate

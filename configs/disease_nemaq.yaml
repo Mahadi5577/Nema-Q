@@ -1,0 +1,9 @@
+# Disease (delta ~= 0 tree): H1 positive control. No public split -> ratio.
+# Tuned on validation only (sweep, 2026-07-16): lr 0.05 matches the tuned
+# baselines; gate_bias -2 mildly mutes branches at init (collapse never
+# observed on disease, so no citeseer-style aux boost needed).
+# Tuned result (seeds 0-9): 0.8928 +/- 0.0351 (frozen 0.8944; euclidean 0.8906).
+inherit: base.yaml
+data: { name: disease, split: ratio }
+model: { name: nemaq, gate_bias_init: -2.0 }
+train: { lr: 0.05, aux_weight: 0.3 }

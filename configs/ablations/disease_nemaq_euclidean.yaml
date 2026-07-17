@@ -1,0 +1,7 @@
+# NEMA-E geometry control on disease — H1's highest-leverage comparison
+# (delta ~= 0: hyperbolic advantage predicted largest here).
+# Shares the disease tuned nemaq recipe (selected on validation).
+inherit: ../base.yaml
+data: { name: disease, split: ratio }
+model: { name: nemaq, geometry: euclidean, gate_bias_init: -2.0 }
+train: { lr: 0.05, aux_weight: 0.3 }

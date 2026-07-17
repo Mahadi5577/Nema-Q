@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nemaq"
+version = "0.1.0"
+description = "NEMA-Q: Non-Euclidean Memory-Augmented Quantum Graph Neural Network — instrumentation-first hybrid architecture study"
+authors = [{ name = "MD Nurol Amin Mahadi" }]
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.2",
+    "torch-geometric>=2.5",
+    "geoopt>=0.5.0",
+    "pennylane>=0.36",
+    "numpy>=1.26",
+    "scipy>=1.12",
+    "pyyaml>=6.0",
+    "networkx>=3.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "optuna>=3.6",
+    "matplotlib>=3.8",
+    "pandas>=2.2",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

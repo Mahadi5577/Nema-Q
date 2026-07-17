@@ -1,0 +1,7 @@
+# Tuned on validation only (sweeps 1-3, 2026-07-16): aux=2.0 rescues the
+# gradient-starved branches; gate_bias -4 mutes the loud q branch at init.
+# Tuned result (seeds 0-9): 0.6536 +/- 0.0185 (untuned 0.5075; trunk 0.6457).
+inherit: base.yaml
+data: { name: citeseer }
+model: { name: nemaq, gate_bias_init: -4.0 }
+train: { lr: 0.005, aux_weight: 2.0, patience: 100 }

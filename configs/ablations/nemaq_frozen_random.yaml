@@ -1,0 +1,6 @@
+# NEMA-R: recipe control — same circuit, frozen random parameters.
+inherit: ../base.yaml
+model:
+  name: nemaq
+  geometry: hyperbolic
+  quantum_mode: frozen_random

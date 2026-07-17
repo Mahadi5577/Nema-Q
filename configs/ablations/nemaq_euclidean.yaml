@@ -1,0 +1,6 @@
+# NEMA-E: geometry control — Euclidean encoder replaces hyperbolic.
+inherit: ../base.yaml
+model:
+  name: nemaq
+  geometry: euclidean
+  quantum_mode: pqc

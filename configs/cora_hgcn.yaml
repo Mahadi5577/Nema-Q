@@ -1,0 +1,5 @@
+# Standalone hyperbolic GNN baseline (ICEQT'26 review: hyperbolic baselines
+# under the same split with reported parameter counts).
+inherit: base.yaml
+model:
+  name: hgcn

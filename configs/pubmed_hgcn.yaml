@@ -1,0 +1,4 @@
+# Standalone hyperbolic baseline (referee B: same-split hyperbolic GNN).
+inherit: base.yaml
+data: { name: pubmed }
+model: { name: hgcn }

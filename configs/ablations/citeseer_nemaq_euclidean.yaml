@@ -1,0 +1,6 @@
+# NEMA-E geometry control on citeseer (H1: geometry x delta interaction).
+# Shares the citeseer tuned recipe (selected on validation, sweeps 1-3).
+inherit: ../base.yaml
+data: { name: citeseer }
+model: { name: nemaq, geometry: euclidean, gate_bias_init: -4.0 }
+train: { lr: 0.005, aux_weight: 2.0, patience: 100 }

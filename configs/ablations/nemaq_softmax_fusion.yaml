@@ -1,0 +1,9 @@
+# Fusion ablation: original softmax-competition gating (known unstable —
+# Phase-4 matrix 2026-07-16 showed 0.32-0.78 seed spread). Kept to quantify
+# the residual-trunk fix in the paper.
+inherit: ../base.yaml
+model:
+  name: nemaq
+  geometry: hyperbolic
+  quantum_mode: pqc
+  fusion_mode: softmax

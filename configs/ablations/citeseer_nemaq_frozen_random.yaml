@@ -1,0 +1,6 @@
+# NEMA-R control on citeseer (H5: frozen-random vs trained PQC).
+# Shares the citeseer tuned recipe (selected on validation, sweeps 1-3).
+inherit: ../base.yaml
+data: { name: citeseer }
+model: { name: nemaq, quantum_mode: frozen_random, gate_bias_init: -4.0 }
+train: { lr: 0.005, aux_weight: 2.0, patience: 100 }

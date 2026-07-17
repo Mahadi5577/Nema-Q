@@ -1,0 +1,35 @@
+# Base config — all experiment configs inherit from this and override.
+data:
+  name: cora
+  root: data
+  split: public          # public | low_label
+  labels_per_class: 5    # used when split == low_label
+  split_seed: 0          # independent of model seed (paired stats)
+
+model:
+  name: gcn              # gcn | gat | mlp | nemaq
+  hidden: 64
+  dropout: 0.5
+  # NEMA-Q-specific (ignored by baselines):
+  geometry: hyperbolic   # hyperbolic | euclidean
+  quantum_mode: pqc      # pqc | surrogate | frozen_random | off
+  n_qubits: 4
+  q_depth: 2
+  branch_dim: 64         # 16 bottlenecked the bypass trunk ~10 pts below plain GCN
+  fused_dim: 64
+  fusion_mode: residual  # residual (bypass trunk + gated residuals) | softmax (ablation)
+  curvature: 1.0
+  learnable_curvature: true
+  shots: null            # null = exact statevector; int = finite-shot ablation
+
+train:
+  lr: 0.01
+  weight_decay: 0.0005
+  epochs: 500
+  patience: 100
+  aux_weight: 0.3   # per-branch deep-supervision loss weight (0 disables)
+  aux_anneal: true  # linearly decay aux loss to 0 over training: early
+                    # anti-starvation without late-training interference
+
+deterministic: true
+device: auto

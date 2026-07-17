@@ -1,0 +1,4 @@
+# Diagnostic: bypass trunk + fusion + head only (geometry off, quantum off).
+inherit: ../base.yaml
+data: { name: citeseer }
+model: { name: nemaq, geometry: "off", quantum_mode: "off" }

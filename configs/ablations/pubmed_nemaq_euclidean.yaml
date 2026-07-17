@@ -1,0 +1,4 @@
+# NEMA-E geometry control on pubmed (H1: geometry x delta interaction).
+inherit: ../base.yaml
+data: { name: pubmed }
+model: { name: nemaq, geometry: euclidean }

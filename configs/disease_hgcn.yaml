@@ -1,0 +1,7 @@
+# Disease (delta ~= 0 tree): H1 positive control. No public split -> ratio.
+# Tuned on validation only (2026-07-16): default recipe was majority-class
+# degenerate. Tuned: lr 0.05, wd 5e-5, dropout 0.2 -> 0.8839 (seeds 0-9).
+inherit: base.yaml
+data: { name: disease, split: ratio }
+model: { name: hgcn, dropout: 0.2 }
+train: { lr: 0.05, weight_decay: 0.00005 }
