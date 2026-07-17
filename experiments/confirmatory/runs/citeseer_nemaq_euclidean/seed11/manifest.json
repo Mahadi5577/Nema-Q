@@ -1,0 +1,82 @@
+{
+  "timestamp": "2026-07-17T14:50:06",
+  "git_hash": "8552c89899842578cb2b6e69d42600ba803a2bf4",
+  "seed": 11,
+  "config": {
+    "data": {
+      "name": "citeseer",
+      "root": "data",
+      "split": "public",
+      "labels_per_class": 5,
+      "split_seed": 0
+    },
+    "model": {
+      "name": "nemaq",
+      "hidden": 64,
+      "dropout": 0.5,
+      "geometry": "euclidean",
+      "quantum_mode": "pqc",
+      "n_qubits": 4,
+      "q_depth": 2,
+      "branch_dim": 64,
+      "fused_dim": 64,
+      "fusion_mode": "residual",
+      "curvature": 1.0,
+      "learnable_curvature": true,
+      "shots": null,
+      "gate_bias_init": -4.0
+    },
+    "train": {
+      "lr": 0.005,
+      "weight_decay": 0.0005,
+      "epochs": 500,
+      "patience": 100,
+      "aux_weight": 2.0,
+      "aux_anneal": true
+    },
+    "deterministic": true,
+    "device": "cuda"
+  },
+  "env": {
+    "python": "3.12.13",
+    "torch": "2.11.0+cu128",
+    "torch_geometric": "2.8.0",
+    "geoopt": "0.5.1",
+    "pennylane": "0.45.1",
+    "numpy": "2.0.2"
+  },
+  "metrics": {
+    "val_acc": 0.6780000329017639,
+    "test_acc": 0.659000039100647,
+    "test_macro_f1": 0.622349599825235,
+    "test_min_class_f1": 0.26993865030674846,
+    "epochs_run": 240,
+    "param_counts": {
+      "total": 512018,
+      "branch_geo": 241216,
+      "branch_q": 15160,
+      "branch_bypass": 241216
+    }
+  },
+  "telemetry_summary": {
+    "geo": {
+      "final_grad_var": 4.620113713826868e-08,
+      "min_grad_var": 8.795419392804149e-10,
+      "n_steps": 240
+    },
+    "q": {
+      "final_grad_var": 1.603307353548189e-08,
+      "min_grad_var": 2.152756639617337e-09,
+      "n_steps": 240,
+      "min_circuit_grad_var": 6.68681252591341e-08,
+      "final_circuit_grad_var": 5.566826985159423e-06,
+      "h3_pass_relative": true,
+      "h3_classical_reference_var": 3.0187674582293766e-09
+    },
+    "bypass": {
+      "final_grad_var": 4.119780427913611e-08,
+      "min_grad_var": 3.0187674582293766e-09,
+      "n_steps": 240
+    }
+  }
+}

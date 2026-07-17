@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-07-17T14:00:58",
+  "git_hash": "8552c89899842578cb2b6e69d42600ba803a2bf4",
+  "seed": 10,
+  "config": {
+    "data": {
+      "name": "pubmed",
+      "root": "data",
+      "split": "public",
+      "labels_per_class": 5,
+      "split_seed": 0
+    },
+    "model": {
+      "name": "gcn",
+      "hidden": 64,
+      "dropout": 0.5,
+      "geometry": "hyperbolic",
+      "quantum_mode": "pqc",
+      "n_qubits": 4,
+      "q_depth": 2,
+      "branch_dim": 64,
+      "fused_dim": 64,
+      "fusion_mode": "residual",
+      "curvature": 1.0,
+      "learnable_curvature": true,
+      "shots": null
+    },
+    "train": {
+      "lr": 0.01,
+      "weight_decay": 0.0005,
+      "epochs": 500,
+      "patience": 100,
+      "aux_weight": 0.3,
+      "aux_anneal": true
+    },
+    "deterministic": true,
+    "device": "cuda"
+  },
+  "env": {
+    "python": "3.12.13",
+    "torch": "2.11.0+cu128",
+    "torch_geometric": "2.8.0",
+    "geoopt": "0.5.1",
+    "pennylane": "0.45.1",
+    "numpy": "2.0.2"
+  },
+  "metrics": {
+    "val_acc": 0.8080000281333923,
+    "test_acc": 0.7930000424385071,
+    "test_macro_f1": 0.7883878101556617,
+    "test_min_class_f1": 0.7713498622589532,
+    "epochs_run": 176,
+    "param_counts": {
+      "total": 32259
+    }
+  },
+  "telemetry_summary": {
+    "model": {
+      "final_grad_var": 4.5532544845627854e-07,
+      "min_grad_var": 1.2109256886105868e-07,
+      "n_steps": 176
+    }
+  }
+}

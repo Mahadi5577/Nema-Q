@@ -1,0 +1,11 @@
+{
+  "h4": {
+    "geo": 0.4109997920107973,
+    "q": 0.6632075151273376,
+    "bypass": 0.7144097591437347
+  },
+  "randomization": {
+    "spearman_orig_vs_randomized": -0.0213135826871087,
+    "passes": true
+  }
+}

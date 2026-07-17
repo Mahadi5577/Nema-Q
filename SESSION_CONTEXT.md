@@ -1,5 +1,17 @@
 # SESSION_CONTEXT — NEMA-Q Q1 Extension (handoff, 2026-07-17)
 
+## CONFIRMATORY RESULTS IN (seeds 10–19, run 2026-07-17, git 8552c89 in manifests; `experiments/confirmatory/runs/`, 300 manifests + 40 h4.json)
+
+- **H5:** falsifier never triggered. Cora +4.45 8/10 p=.019 d=.87 (Holm-adj .074, marginal); pubmed +0.78 p=.169; citeseer +0.32 ns; disease −0.37 ns. Verdict: frozen never measurably worse, sig better on Cora (uncorrected).
+- **H1(a): holds narrowly** — Stouffer p=.040 (pilot .004). Per-dataset sig only pubmed (+2.88 p=.014 d=.99; pilot's citeseer sig did NOT replicate, +0.57 ns). **H1(b): falsified again** ρ=+.40. Disease GCN .9175 vs HGCN .8703 (hgcn seed14 majority-relapse minF1=0; nemaq no relapses).
+- **H4: FALSIFIED** — pooled geo ρ=.473, q ρ=.365 (n=40), both ≤ .5 threshold. **H3: fails on disease 6/10** (<9/10 criterion), citation networks 10/10.
+- **H2 std-label:** surrogate .7155 ≈ trained (p=.61); pilot Levene variance story did NOT replicate (ratio .84, p=.76). Low-label H2 NOT run (open).
+- **Fusion:** softmax mean gap +4.0 ns (p=.70) — mean claim dead; variance claim survives (sd ratio 2.1, Levene .023).
+- **Waterfall (cora):** GCN .8190 → trunk .7703 (−4.87 p=.002) → frozen .7371 (−3.32 p=.027) → trained .6926 (−4.45 p=.037). trunk-vs-HGCN now SIG −1.79 p=.039 (pilot "≈HGCN" dead).
+- **Randomization replicates:** |ρ| .24/.10/.18 pass, disease .557 fail. Curvature: c≈.96/1.00/1.18/1.35 (cora/cs/pm/disease).
+- **Draft fully updated to confirmatory** (all headline [PILOT] replaced; honest shrinkage note in Limitations; claims re-graded). Remaining [PILOT]: collapse diagnostics, masking/perturbation magnitudes, XAI figs.
+- **STALE: results figures** (waterfall/forest/paired/stability) still pilot-based — regenerate from confirmatory manifests (notebook §16 cells, point collect_scores at confirmatory runs) before submission.
+
 **2026-07-17 session progress:**
 - Disease tuned recipes now IN yamls (`configs/disease_*.yaml` + `ablations/disease_nemaq_{euclidean,frozen_random}.yaml`; trunk_only stays default, matching citeseer pattern). Colab must re-pull these before confirmatory runs.
 - PREREGISTRATION.md §2 filled (δ-table + homophily + splits) and §5 rewritten: locked per-dataset recipes table, honest note that Optuna plan → manual equal-shape sweeps. Freeze still gated on git push.
