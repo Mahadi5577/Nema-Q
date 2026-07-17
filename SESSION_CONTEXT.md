@@ -10,7 +10,7 @@
 - **Waterfall (cora):** GCN .8190 → trunk .7703 (−4.87 p=.002) → frozen .7371 (−3.32 p=.027) → trained .6926 (−4.45 p=.037). trunk-vs-HGCN now SIG −1.79 p=.039 (pilot "≈HGCN" dead).
 - **Randomization replicates:** |ρ| .24/.10/.18 pass, disease .557 fail. Curvature: c≈.96/1.00/1.18/1.35 (cora/cs/pm/disease).
 - **Draft fully updated to confirmatory** (all headline [PILOT] replaced; honest shrinkage note in Limitations; claims re-graded). Remaining [PILOT]: collapse diagnostics, masking/perturbation magnitudes, XAI figs.
-- **STALE: results figures** (waterfall/forest/paired/stability) still pilot-based — regenerate from confirmatory manifests (notebook §16 cells, point collect_scores at confirmatory runs) before submission.
+- **Results figures REGENERATED from confirmatory manifests** (locally — figures module needs no torch): `experiments/figures_confirmatory/results/` (21 PDFs, commit `d84668f`); notebook §18.5 reproduces in Colab. Only XAI figures remain pilot-based (need trained models → Colab §17 if refresh wanted; draft tags them [PILOT]).
 
 **2026-07-17 session progress:**
 - Disease tuned recipes now IN yamls (`configs/disease_*.yaml` + `ablations/disease_nemaq_{euclidean,frozen_random}.yaml`; trunk_only stays default, matching citeseer pattern). Colab must re-pull these before confirmatory runs.
