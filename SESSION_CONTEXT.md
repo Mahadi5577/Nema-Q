@@ -45,7 +45,8 @@ Tuned recipe (validation-only, sweeps 1–3): **lr .005, aux_weight 2.0, gate_bi
 
 1. ~~GitHub push~~ DONE 2026-07-17: https://github.com/Mahadi5577/Nema-Q (private), initial commit `dd61326`.
 2. ~~Freeze PREREGISTRATION.md~~ DONE: §1–§6 frozen at `dd61326`; freeze header + §7 amendment recorded. Hash filled in draft §4.2 + Declarations (Zenodo DOI still TO-FILL at submission).
-3. **Confirmatory runs seeds 10–19**, all datasets, locked recipes → replaces every `[PILOT]`; **Colab must `git clone` the repo and run from the clone** so manifests record real git hash (manifest.py runs `git rev-parse HEAD` in cwd). Also compute: H4 Spearman (gate vs leave-branch-out, `telemetry/attribution.py h4_correlation`), exact Pubmed H5 p, final Stouffer pooled p, Disease randomization ρ exact value.
+3. **Confirmatory runs seeds 10–19** → notebook §18 (cells 89–93, added 2026-07-17, commit `5777afa`) does everything: clone-from-repo (real git hash), full matrix incl. cora surrogate/softmax + trunk_only everywhere, H4 + randomization ρ per nemaq run (h4.json), stats cell (H5/H1 one-sided Wilcoxon, Stouffer, Spearman δ-gain), export zip. User: run deps cell → §18 cells ONLY (skip %%writefile). Repo must be public or PAT-clone. Results → replace every `[PILOT]` in draft.
+   Notebook audit done: 92-cell `NEMA_Q_colab_final.ipynb` (user's executed copy, gitignored) diffed vs repo — all %%writefile cells identical to src/; only stale cell 68 (unquoted `off` → YAML False, superseded by cell 69 in-notebook); tuned-config writes in sweep cells matched repo EXCEPT disease patience 200 → repo yamls fixed + prereg §7 amendment (commit `5777afa`). Repo notebook = patched 97-cell version.
 4. AI-disclosure statement (Stage 5 disclosure mode).
 5. Flip repo private → public at submission (prereg verifiability) + Zenodo archive DOI.
 
