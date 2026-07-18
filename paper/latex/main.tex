@@ -96,7 +96,14 @@ with $U_{\text{ent}}$ the StronglyEntanglingLayers ansatz (per-layer general sin
 o_{ik} = \langle \psi_i(\theta) | Z_k | \psi_i(\theta) \rangle, \qquad
 h_{q,i} = W_o\, o_i + \beta_o.
 \end{equation}
-The observable vector $o_i$ is the quantum--classical boundary that QOA attributes against (Sect.~\ref{sec:qoa}). Swaps: \texttt{frozen\_random} --- identical circuit with $\theta \sim \mathcal{U}[0, 2\pi)^{|\theta|}$ drawn once from a fixed seed and excluded from the optimizer (control NEMA-R); \texttt{surrogate} --- parameter-matched classical MLP (NEMA-C); \texttt{off}. The circuit is deliberately small, with $n \le 8$, $L \le 4$ enforced as assertions in code, to stay inside barren-plateau safe budgets \cite{larocca2025barren}; exact statevector simulation is used throughout, with finite-shot execution as a preregistered ablation.
+Figure~\ref{fig:circuit} shows the compiled circuit. The observable vector $o_i$ is the quantum--classical boundary that QOA attributes against (Sect.~\ref{sec:qoa}).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/quantum_circuit.pdf}
+\caption{The quantum branch's circuit, compiled to device gates ($n=4$ qubits, depth $L=2$). Per-qubit $R_Y$ gates realize the angle embedding of the compressed inputs $a_{ik}$; each StronglyEntanglingLayers block applies one general single-qubit rotation $\mathrm{Rot}(\theta) = R_Z R_Y R_Z$ per qubit followed by a CNOT ring (nearest-neighbor in the first layer, range-2 in the second), for $|\theta| = 3nL = 24$ trainable parameters; readout is the four local Pauli-Z expectations $\langle Z_k \rangle$. NEMA-R freezes exactly these 24 parameters at seeded random values.}
+\label{fig:circuit}
+\end{figure} Swaps: \texttt{frozen\_random} --- identical circuit with $\theta \sim \mathcal{U}[0, 2\pi)^{|\theta|}$ drawn once from a fixed seed and excluded from the optimizer (control NEMA-R); \texttt{surrogate} --- parameter-matched classical MLP (NEMA-C); \texttt{off}. The circuit is deliberately small, with $n \le 8$, $L \le 4$ enforced as assertions in code, to stay inside barren-plateau safe budgets \cite{larocca2025barren}; exact statevector simulation is used throughout, with finite-shot execution as a preregistered ablation.
 
 \paragraph{Classical bypass (trunk)} A plain two-layer GCN encoder \cite{kipf2017gcn} producing $h_{\text{tr},i}$.
 
