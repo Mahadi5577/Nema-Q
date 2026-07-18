@@ -1,0 +1,670 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{50}
+% BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
+\ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
+\ifx \binits  \undefined \def \binits#1{#1}\fi
+\ifx \bauthor  \undefined \def \bauthor#1{#1}\fi
+\ifx \batitle  \undefined \def \batitle#1{#1}\fi
+\ifx \bjtitle  \undefined \def \bjtitle#1{#1}\fi
+\ifx \bvolume  \undefined \def \bvolume#1{\textbf{#1}}\fi
+\ifx \byear  \undefined \def \byear#1{#1}\fi
+\ifx \bissue  \undefined \def \bissue#1{#1}\fi
+\ifx \bfpage  \undefined \def \bfpage#1{#1}\fi
+\ifx \blpage  \undefined \def \blpage #1{#1}\fi
+\ifx \burl  \undefined \def \burl#1{\textsf{#1}}\fi
+\ifx \doiurl  \undefined \def \doiurl#1{\url{https://doi.org/#1}}\fi
+\ifx \betal  \undefined \def \betal{\textit{et al.}}\fi
+\ifx \binstitute  \undefined \def \binstitute#1{#1}\fi
+\ifx \binstitutionaled  \undefined \def \binstitutionaled#1{#1}\fi
+\ifx \bctitle  \undefined \def \bctitle#1{#1}\fi
+\ifx \beditor  \undefined \def \beditor#1{#1}\fi
+\ifx \bpublisher  \undefined \def \bpublisher#1{#1}\fi
+\ifx \bbtitle  \undefined \def \bbtitle#1{#1}\fi
+\ifx \bedition  \undefined \def \bedition#1{#1}\fi
+\ifx \bseriesno  \undefined \def \bseriesno#1{#1}\fi
+\ifx \blocation  \undefined \def \blocation#1{#1}\fi
+\ifx \bsertitle  \undefined \def \bsertitle#1{#1}\fi
+\ifx \bsnm \undefined \def \bsnm#1{#1}\fi
+\ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
+\ifx \bparticle \undefined \def \bparticle#1{#1}\fi
+\ifx \barticle \undefined \def \barticle#1{#1}\fi
+\bibcommenthead
+\ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
+\ifx \botherref \undefined \def \botherref #1{#1}\fi
+\ifx \url \undefined \def \url#1{\textsf{#1}}\fi
+\ifx \bchapter \undefined \def \bchapter#1{#1}\fi
+\ifx \bbook \undefined \def \bbook#1{#1}\fi
+\ifx \bcomment \undefined \def \bcomment#1{#1}\fi
+\ifx \oauthor \undefined \def \oauthor#1{#1}\fi
+\ifx \citeauthoryear \undefined \def \citeauthoryear#1{#1}\fi
+\ifx \endbibitem  \undefined \def \endbibitem {}\fi
+\ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
+\ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
+\csname PreBibitemsHook\endcsname
+
+%%% 1
+\bibitem[\protect\citeauthoryear{}{2026}]{qdl2026review}
+\begin{botherref}
+Quantum deep learning: a comprehensive review
+(2026)
+\end{botherref}
+\endbibitem
+
+%%% 2
+\bibitem[\protect\citeauthoryear{Shchur et~al.}{2018}]{shchur2018pitfalls}
+\begin{botherref}
+\oauthor{\bsnm{Shchur}, \binits{O.}},
+\oauthor{\bsnm{Mumme}, \binits{M.}},
+\oauthor{\bsnm{Bojchevski}, \binits{A.}},
+\oauthor{\bsnm{G{\"u}nnemann}, \binits{S.}}:
+Pitfalls of graph neural network evaluation
+(2018)
+\end{botherref}
+\endbibitem
+
+%%% 3
+\bibitem[\protect\citeauthoryear{Huang et~al.}{2021}]{huang2021power}
+\begin{barticle}
+\bauthor{\bsnm{Huang}, \binits{H.-Y.}},
+\bauthor{\bsnm{Broughton}, \binits{M.}},
+\bauthor{\bsnm{Mohseni}, \binits{M.}},
+\bauthor{\bsnm{Babbush}, \binits{R.}},
+\bauthor{\bsnm{Boixo}, \binits{S.}},
+\bauthor{\bsnm{Neven}, \binits{H.}},
+\bauthor{\bsnm{McClean}, \binits{J.R.}}:
+\batitle{Power of data in quantum machine learning}.
+\bjtitle{Nature Communications}
+\bvolume{12},
+\bfpage{2631}
+(\byear{2021})
+\end{barticle}
+\endbibitem
+
+%%% 4
+\bibitem[\protect\citeauthoryear{Verdon et~al.}{2019}]{verdon2019qgnn}
+\begin{botherref}
+\oauthor{\bsnm{Verdon}, \binits{G.}},
+\oauthor{\bsnm{McCourt}, \binits{T.}},
+\oauthor{\bsnm{Luzhnica}, \binits{E.}},
+\oauthor{\bsnm{Singh}, \binits{V.}},
+\oauthor{\bsnm{Leichenauer}, \binits{S.}},
+\oauthor{\bsnm{Hidary}, \binits{J.}}:
+Quantum graph neural networks
+(2019)
+\end{botherref}
+\endbibitem
+
+%%% 5
+\bibitem[\protect\citeauthoryear{Mernyei et~al.}{2022}]{mernyei2022equivariant}
+\begin{bchapter}
+\bauthor{\bsnm{Mernyei}, \binits{P.}},
+\bauthor{\bsnm{Meichanetzidis}, \binits{K.}},
+\bauthor{\bsnm{Ceylan}, \binits{{\. I}.{\. I}.}}:
+\bctitle{Equivariant quantum graph circuits}.
+In: \bbtitle{Proceedings of the 39th International Conference on Machine
+  Learning}.
+\bsertitle{PMLR},
+vol. \bseriesno{162}
+(\byear{2022})
+\end{bchapter}
+\endbibitem
+
+%%% 6
+\bibitem[\protect\citeauthoryear{}{2026}]{mpqgnn2026wl}
+\begin{botherref}
+Scalable message-passing quantum graph neural networks in the
+  {W}eisfeiler--{L}eman hierarchy
+(2026)
+\end{botherref}
+\endbibitem
+
+%%% 7
+\bibitem[\protect\citeauthoryear{Benedetti et~al.}{2019}]{benedetti2019pqc}
+\begin{barticle}
+\bauthor{\bsnm{Benedetti}, \binits{M.}},
+\bauthor{\bsnm{Lloyd}, \binits{E.}},
+\bauthor{\bsnm{Sack}, \binits{S.}},
+\bauthor{\bsnm{Fiorentini}, \binits{M.}}:
+\batitle{Parameterized quantum circuits as machine learning models}.
+\bjtitle{Quantum Science and Technology}
+\bvolume{4},
+\bfpage{043001}
+(\byear{2019})
+\end{barticle}
+\endbibitem
+
+%%% 8
+\bibitem[\protect\citeauthoryear{Schuld and Killoran}{2019}]{schuld2019feature}
+\begin{barticle}
+\bauthor{\bsnm{Schuld}, \binits{M.}},
+\bauthor{\bsnm{Killoran}, \binits{N.}}:
+\batitle{Quantum machine learning in feature {H}ilbert spaces}.
+\bjtitle{Physical Review Letters}
+\bvolume{122},
+\bfpage{040504}
+(\byear{2019})
+\end{barticle}
+\endbibitem
+
+%%% 9
+\bibitem[\protect\citeauthoryear{Rahimi and Recht}{2007}]{rahimi2007random}
+\begin{bchapter}
+\bauthor{\bsnm{Rahimi}, \binits{A.}},
+\bauthor{\bsnm{Recht}, \binits{B.}}:
+\bctitle{Random features for large-scale kernel machines}.
+In: \bbtitle{Advances in Neural Information Processing Systems 20}
+(\byear{2007})
+\end{bchapter}
+\endbibitem
+
+%%% 10
+\bibitem[\protect\citeauthoryear{Fujii and Nakajima}{2017}]{fujii2017qrc}
+\begin{barticle}
+\bauthor{\bsnm{Fujii}, \binits{K.}},
+\bauthor{\bsnm{Nakajima}, \binits{K.}}:
+\batitle{Harnessing disordered-ensemble quantum dynamics for machine learning}.
+\bjtitle{Physical Review Applied}
+\bvolume{8},
+\bfpage{024030}
+(\byear{2017})
+\end{barticle}
+\endbibitem
+
+%%% 11
+\bibitem[\protect\citeauthoryear{Mujal et~al.}{2021}]{mujal2021qrc}
+\begin{barticle}
+\bauthor{\bsnm{Mujal}, \binits{P.}},
+\bauthor{\bsnm{Mart{\'i}nez-Pe{\~n}a}, \binits{R.}},
+\bauthor{\bsnm{Nokkala}, \binits{J.}},
+\bauthor{\bsnm{Garc{\'i}a-Beni}, \binits{J.}},
+\bauthor{\bsnm{Giorgi}, \binits{G.L.}},
+\bauthor{\bsnm{Soriano}, \binits{M.C.}},
+\bauthor{\bsnm{Zambrini}, \binits{R.}}:
+\batitle{Opportunities in quantum reservoir computing and quantum extreme
+  learning machines}.
+\bjtitle{Advanced Quantum Technologies}
+\bvolume{4},
+\bfpage{2100027}
+(\byear{2021})
+\end{barticle}
+\endbibitem
+
+%%% 12
+\bibitem[\protect\citeauthoryear{Innocenti et~al.}{2023}]{innocenti2023qelm}
+\begin{barticle}
+\bauthor{\bsnm{Innocenti}, \binits{L.}},
+\bauthor{\bsnm{Lorenzo}, \binits{S.}},
+\bauthor{\bsnm{Palmisano}, \binits{I.}},
+\bauthor{\bsnm{Ferraro}, \binits{A.}},
+\bauthor{\bsnm{Paternostro}, \binits{M.}},
+\bauthor{\bsnm{Palma}, \binits{G.M.}}:
+\batitle{Potential and limitations of quantum extreme learning machines}.
+\bjtitle{Communications Physics}
+\bvolume{6},
+\bfpage{118}
+(\byear{2023})
+\end{barticle}
+\endbibitem
+
+%%% 13
+\bibitem[\protect\citeauthoryear{}{2025}]{qelm2025scrambling}
+\begin{botherref}
+State estimation with quantum extreme learning machines beyond the scrambling
+  time.
+npj Quantum Information
+\textbf{11}
+(2025)
+\doiurl{10.1038/s41534-024-00927-5}
+\end{botherref}
+\endbibitem
+
+%%% 14
+\bibitem[\protect\citeauthoryear{Herbert}{2023}]{herbert2023nfl}
+\begin{botherref}
+\oauthor{\bsnm{Herbert}, \binits{S.}}:
+A no free lunch theorem for untrained quantum circuits in machine learning
+(2023)
+\end{botherref}
+\endbibitem
+
+%%% 15
+\bibitem[\protect\citeauthoryear{McClean et~al.}{2018}]{mcclean2018barren}
+\begin{barticle}
+\bauthor{\bsnm{McClean}, \binits{J.R.}},
+\bauthor{\bsnm{Boixo}, \binits{S.}},
+\bauthor{\bsnm{Smelyanskiy}, \binits{V.N.}},
+\bauthor{\bsnm{Babbush}, \binits{R.}},
+\bauthor{\bsnm{Neven}, \binits{H.}}:
+\batitle{Barren plateaus in quantum neural network training landscapes}.
+\bjtitle{Nature Communications}
+\bvolume{9},
+\bfpage{4812}
+(\byear{2018})
+\end{barticle}
+\endbibitem
+
+%%% 16
+\bibitem[\protect\citeauthoryear{Cerezo et~al.}{2021}]{cerezo2021cost}
+\begin{barticle}
+\bauthor{\bsnm{Cerezo}, \binits{M.}},
+\bauthor{\bsnm{Sone}, \binits{A.}},
+\bauthor{\bsnm{Volkoff}, \binits{T.}},
+\bauthor{\bsnm{Cincio}, \binits{L.}},
+\bauthor{\bsnm{Coles}, \binits{P.J.}}:
+\batitle{Cost function dependent barren plateaus in shallow parametrized
+  quantum circuits}.
+\bjtitle{Nature Communications}
+\bvolume{12},
+\bfpage{1791}
+(\byear{2021})
+\end{barticle}
+\endbibitem
+
+%%% 17
+\bibitem[\protect\citeauthoryear{Holmes
+  et~al.}{2022}]{holmes2022expressibility}
+\begin{barticle}
+\bauthor{\bsnm{Holmes}, \binits{Z.}},
+\bauthor{\bsnm{Sharma}, \binits{K.}},
+\bauthor{\bsnm{Cerezo}, \binits{M.}},
+\bauthor{\bsnm{Coles}, \binits{P.J.}}:
+\batitle{Connecting ansatz expressibility to gradient magnitudes and barren
+  plateaus}.
+\bjtitle{PRX Quantum}
+\bvolume{3},
+\bfpage{010313}
+(\byear{2022})
+\end{barticle}
+\endbibitem
+
+%%% 18
+\bibitem[\protect\citeauthoryear{Larocca et~al.}{2025}]{larocca2025barren}
+\begin{barticle}
+\bauthor{\bsnm{Larocca}, \binits{M.}}, \betal:
+\batitle{Barren plateaus in variational quantum computing}.
+\bjtitle{Nature Reviews Physics}
+(\byear{2025})
+\doiurl{10.1038/s42254-025-00813-9}
+\end{barticle}
+\endbibitem
+
+%%% 19
+\bibitem[\protect\citeauthoryear{Tang}{2019}]{tang2019dequant}
+\begin{bchapter}
+\bauthor{\bsnm{Tang}, \binits{E.}}:
+\bctitle{A quantum-inspired classical algorithm for recommendation systems}.
+In: \bbtitle{Proceedings of the 51st Annual ACM SIGACT Symposium on Theory of
+  Computing (STOC)}
+(\byear{2019})
+\end{bchapter}
+\endbibitem
+
+%%% 20
+\bibitem[\protect\citeauthoryear{Schreiber
+  et~al.}{2023}]{schreiber2023surrogates}
+\begin{barticle}
+\bauthor{\bsnm{Schreiber}, \binits{F.J.}},
+\bauthor{\bsnm{Eisert}, \binits{J.}},
+\bauthor{\bsnm{Meyer}, \binits{J.J.}}:
+\batitle{Classical surrogates for quantum learning models}.
+\bjtitle{Physical Review Letters}
+\bvolume{131},
+\bfpage{100803}
+(\byear{2023})
+\end{barticle}
+\endbibitem
+
+%%% 21
+\bibitem[\protect\citeauthoryear{Sweke et~al.}{2025}]{sweke2025rff}
+\begin{barticle}
+\bauthor{\bsnm{Sweke}, \binits{R.}},
+\bauthor{\bsnm{Recio-Armengol}, \binits{E.}},
+\bauthor{\bsnm{Jerbi}, \binits{S.}},
+\bauthor{\bsnm{Gil-Fuster}, \binits{E.}},
+\bauthor{\bsnm{Fuller}, \binits{B.}},
+\bauthor{\bsnm{Eisert}, \binits{J.}},
+\bauthor{\bsnm{Meyer}, \binits{J.J.}}:
+\batitle{Potential and limitations of random {F}ourier features for
+  dequantizing quantum machine learning}.
+\bjtitle{Quantum}
+\bvolume{9},
+\bfpage{1640}
+(\byear{2025})
+\end{barticle}
+\endbibitem
+
+%%% 22
+\bibitem[\protect\citeauthoryear{Shin et~al.}{2024}]{shin2024tensor}
+\begin{barticle}
+\bauthor{\bsnm{Shin}, \binits{S.}},
+\bauthor{\bsnm{Teo}, \binits{Y.S.}},
+\bauthor{\bsnm{Jeong}, \binits{H.}}:
+\batitle{Dequantizing quantum machine learning models using tensor networks}.
+\bjtitle{Physical Review Research}
+\bvolume{6},
+\bfpage{023218}
+(\byear{2024})
+\end{barticle}
+\endbibitem
+
+%%% 23
+\bibitem[\protect\citeauthoryear{}{2024}]{qcnn2024simulable}
+\begin{botherref}
+Quantum convolutional neural networks are (effectively) classically simulable
+(2024)
+\end{botherref}
+\endbibitem
+
+%%% 24
+\bibitem[\protect\citeauthoryear{Nickel and Kiela}{2017}]{nickel2017poincare}
+\begin{bchapter}
+\bauthor{\bsnm{Nickel}, \binits{M.}},
+\bauthor{\bsnm{Kiela}, \binits{D.}}:
+\bctitle{Poincar{\'e} embeddings for learning hierarchical representations}.
+In: \bbtitle{Advances in Neural Information Processing Systems 30}
+(\byear{2017})
+\end{bchapter}
+\endbibitem
+
+%%% 25
+\bibitem[\protect\citeauthoryear{Chami et~al.}{2019}]{chami2019hgcn}
+\begin{bchapter}
+\bauthor{\bsnm{Chami}, \binits{I.}},
+\bauthor{\bsnm{Ying}, \binits{Z.}},
+\bauthor{\bsnm{R{\'e}}, \binits{C.}},
+\bauthor{\bsnm{Leskovec}, \binits{J.}}:
+\bctitle{Hyperbolic graph convolutional neural networks}.
+In: \bbtitle{Advances in Neural Information Processing Systems 32}
+(\byear{2019})
+\end{bchapter}
+\endbibitem
+
+%%% 26
+\bibitem[\protect\citeauthoryear{Liu et~al.}{2019}]{liu2019hgnn}
+\begin{bchapter}
+\bauthor{\bsnm{Liu}, \binits{Q.}},
+\bauthor{\bsnm{Nickel}, \binits{M.}},
+\bauthor{\bsnm{Kiela}, \binits{D.}}:
+\bctitle{Hyperbolic graph neural networks}.
+In: \bbtitle{Advances in Neural Information Processing Systems 32}
+(\byear{2019})
+\end{bchapter}
+\endbibitem
+
+%%% 27
+\bibitem[\protect\citeauthoryear{Ganea et~al.}{2018}]{ganea2018hnn}
+\begin{bchapter}
+\bauthor{\bsnm{Ganea}, \binits{O.}},
+\bauthor{\bsnm{B{\'e}cigneul}, \binits{G.}},
+\bauthor{\bsnm{Hofmann}, \binits{T.}}:
+\bctitle{Hyperbolic neural networks}.
+In: \bbtitle{Advances in Neural Information Processing Systems 31}
+(\byear{2018})
+\end{bchapter}
+\endbibitem
+
+%%% 28
+\bibitem[\protect\citeauthoryear{Adcock et~al.}{2013}]{adcock2013tree}
+\begin{bchapter}
+\bauthor{\bsnm{Adcock}, \binits{A.B.}},
+\bauthor{\bsnm{Sullivan}, \binits{B.D.}},
+\bauthor{\bsnm{Mahoney}, \binits{M.W.}}:
+\bctitle{Tree-like structure in large social and information networks}.
+In: \bbtitle{IEEE 13th International Conference on Data Mining (ICDM)}
+(\byear{2013})
+\end{bchapter}
+\endbibitem
+
+%%% 29
+\bibitem[\protect\citeauthoryear{Yang et~al.}{2022}]{yang2022hgnnreview}
+\begin{botherref}
+\oauthor{\bsnm{Yang}, \binits{M.}}, et al.:
+Hyperbolic graph neural networks: a review of methods and applications
+(2022)
+\end{botherref}
+\endbibitem
+
+%%% 30
+\bibitem[\protect\citeauthoryear{}{2026}]{alignment2026hyperbolic}
+\begin{botherref}
+Hyperbolic graph neural networks under the microscope: the role of
+  geometry--task alignment
+(2026)
+\end{botherref}
+\endbibitem
+
+%%% 31
+\bibitem[\protect\citeauthoryear{Heese et~al.}{2025}]{heese2025shapley}
+\begin{barticle}
+\bauthor{\bsnm{Heese}, \binits{R.}}, \betal:
+\batitle{Explaining quantum circuits with {S}hapley values: towards explainable
+  quantum machine learning}.
+\bjtitle{Quantum Machine Intelligence}
+(\byear{2025})
+\doiurl{10.1007/s42484-025-00254-8}
+\end{barticle}
+\endbibitem
+
+%%% 32
+\bibitem[\protect\citeauthoryear{}{2024}]{qfi2024feature}
+\begin{botherref}
+Feature importance and explainability in quantum machine learning
+(2024)
+\end{botherref}
+\endbibitem
+
+%%% 33
+\bibitem[\protect\citeauthoryear{}{2025}]{qrlaxai2025}
+\begin{botherref}
+{QRLaXAI}: quantum representation learning and explainable {AI}.
+Quantum Machine Intelligence
+(2025)
+\doiurl{10.1007/s42484-025-00253-9}
+\end{botherref}
+\endbibitem
+
+%%% 34
+\bibitem[\protect\citeauthoryear{}{2024}]{gilfuster2024explaining}
+\begin{botherref}
+Opportunities and limitations of explaining quantum machine learning
+(2024)
+\end{botherref}
+\endbibitem
+
+%%% 35
+\bibitem[\protect\citeauthoryear{Adebayo et~al.}{2018}]{adebayo2018sanity}
+\begin{bchapter}
+\bauthor{\bsnm{Adebayo}, \binits{J.}},
+\bauthor{\bsnm{Gilmer}, \binits{J.}},
+\bauthor{\bsnm{Muelly}, \binits{M.}},
+\bauthor{\bsnm{Goodfellow}, \binits{I.}},
+\bauthor{\bsnm{Hardt}, \binits{M.}},
+\bauthor{\bsnm{Kim}, \binits{B.}}:
+\bctitle{Sanity checks for saliency maps}.
+In: \bbtitle{Advances in Neural Information Processing Systems 31}
+(\byear{2018})
+\end{bchapter}
+\endbibitem
+
+%%% 36
+\bibitem[\protect\citeauthoryear{Hooker et~al.}{2019}]{hooker2019roar}
+\begin{bchapter}
+\bauthor{\bsnm{Hooker}, \binits{S.}},
+\bauthor{\bsnm{Erhan}, \binits{D.}},
+\bauthor{\bsnm{Kindermans}, \binits{P.-J.}},
+\bauthor{\bsnm{Kim}, \binits{B.}}:
+\bctitle{A benchmark for interpretability methods in deep neural networks}.
+In: \bbtitle{Advances in Neural Information Processing Systems 32}
+(\byear{2019})
+\end{bchapter}
+\endbibitem
+
+%%% 37
+\bibitem[\protect\citeauthoryear{Agarwal et~al.}{2023}]{agarwal2023graphxai}
+\begin{botherref}
+\oauthor{\bsnm{Agarwal}, \binits{C.}}, et al.:
+Evaluating explainability for graph neural networks
+(2023)
+\end{botherref}
+\endbibitem
+
+%%% 38
+\bibitem[\protect\citeauthoryear{}{2023}]{ginxeval2023}
+\begin{botherref}
+{GInX-Eval}: towards in-distribution evaluation of graph neural network
+  explanations
+(2023)
+\end{botherref}
+\endbibitem
+
+%%% 39
+\bibitem[\protect\citeauthoryear{}{2023}]{robustfidelity2023}
+\begin{botherref}
+Towards robust fidelity for evaluating explainability of graph neural networks
+(2023)
+\end{botherref}
+\endbibitem
+
+%%% 40
+\bibitem[\protect\citeauthoryear{Kipf and Welling}{2017}]{kipf2017gcn}
+\begin{bchapter}
+\bauthor{\bsnm{Kipf}, \binits{T.N.}},
+\bauthor{\bsnm{Welling}, \binits{M.}}:
+\bctitle{Semi-supervised classification with graph convolutional networks}.
+In: \bbtitle{International Conference on Learning Representations}
+(\byear{2017})
+\end{bchapter}
+\endbibitem
+
+%%% 41
+\bibitem[\protect\citeauthoryear{Lee et~al.}{2015}]{lee2015deeply}
+\begin{bchapter}
+\bauthor{\bsnm{Lee}, \binits{C.-Y.}},
+\bauthor{\bsnm{Xie}, \binits{S.}},
+\bauthor{\bsnm{Gallagher}, \binits{P.}},
+\bauthor{\bsnm{Zhang}, \binits{Z.}},
+\bauthor{\bsnm{Tu}, \binits{Z.}}:
+\bctitle{Deeply-supervised nets}.
+In: \bbtitle{Proceedings of the 18th International Conference on Artificial
+  Intelligence and Statistics (AISTATS)}
+(\byear{2015})
+\end{bchapter}
+\endbibitem
+
+%%% 42
+\bibitem[\protect\citeauthoryear{Yang et~al.}{2016}]{yang2016planetoid}
+\begin{bchapter}
+\bauthor{\bsnm{Yang}, \binits{Z.}},
+\bauthor{\bsnm{Cohen}, \binits{W.}},
+\bauthor{\bsnm{Salakhutdinov}, \binits{R.}}:
+\bctitle{Revisiting semi-supervised learning with graph embeddings}.
+In: \bbtitle{Proceedings of the 33rd International Conference on Machine
+  Learning}
+(\byear{2016})
+\end{bchapter}
+\endbibitem
+
+%%% 43
+\bibitem[\protect\citeauthoryear{Wilcoxon}{1945}]{wilcoxon1945}
+\begin{barticle}
+\bauthor{\bsnm{Wilcoxon}, \binits{F.}}:
+\batitle{Individual comparisons by ranking methods}.
+\bjtitle{Biometrics Bulletin}
+\bvolume{1},
+\bfpage{80}--\blpage{83}
+(\byear{1945})
+\end{barticle}
+\endbibitem
+
+%%% 44
+\bibitem[\protect\citeauthoryear{Dem{\v s}ar}{2006}]{demsar2006}
+\begin{barticle}
+\bauthor{\bsnm{Dem{\v s}ar}, \binits{J.}}:
+\batitle{Statistical comparisons of classifiers over multiple data sets}.
+\bjtitle{Journal of Machine Learning Research}
+\bvolume{7},
+\bfpage{1}--\blpage{30}
+(\byear{2006})
+\end{barticle}
+\endbibitem
+
+%%% 45
+\bibitem[\protect\citeauthoryear{Stouffer et~al.}{1949}]{stouffer1949}
+\begin{bbook}
+\bauthor{\bsnm{Stouffer}, \binits{S.A.}},
+\bauthor{\bsnm{Suchman}, \binits{E.A.}},
+\bauthor{\bsnm{DeVinney}, \binits{L.C.}},
+\bauthor{\bsnm{Star}, \binits{S.A.}},
+\bauthor{\bsnm{Williams}, \binits{R.M.}}:
+\bbtitle{The American Soldier: Adjustment During Army Life, Vol. 1}.
+\bpublisher{Princeton University Press}, \blocation{???}
+(\byear{1949})
+\end{bbook}
+\endbibitem
+
+%%% 46
+\bibitem[\protect\citeauthoryear{Holm}{1979}]{holm1979}
+\begin{barticle}
+\bauthor{\bsnm{Holm}, \binits{S.}}:
+\batitle{A simple sequentially rejective multiple test procedure}.
+\bjtitle{Scandinavian Journal of Statistics}
+\bvolume{6},
+\bfpage{65}--\blpage{70}
+(\byear{1979})
+\end{barticle}
+\endbibitem
+
+%%% 47
+\bibitem[\protect\citeauthoryear{Veli{\v c}kovi{\'c}
+  et~al.}{2018}]{velickovic2018gat}
+\begin{bchapter}
+\bauthor{\bsnm{Veli{\v c}kovi{\'c}}, \binits{P.}},
+\bauthor{\bsnm{Cucurull}, \binits{G.}},
+\bauthor{\bsnm{Casanova}, \binits{A.}},
+\bauthor{\bsnm{Romero}, \binits{A.}},
+\bauthor{\bsnm{Li{\`o}}, \binits{P.}},
+\bauthor{\bsnm{Bengio}, \binits{Y.}}:
+\bctitle{Graph attention networks}.
+In: \bbtitle{International Conference on Learning Representations}
+(\byear{2018})
+\end{bchapter}
+\endbibitem
+
+%%% 48
+\bibitem[\protect\citeauthoryear{Sundararajan
+  et~al.}{2017}]{sundararajan2017ig}
+\begin{bchapter}
+\bauthor{\bsnm{Sundararajan}, \binits{M.}},
+\bauthor{\bsnm{Taly}, \binits{A.}},
+\bauthor{\bsnm{Yan}, \binits{Q.}}:
+\bctitle{Axiomatic attribution for deep networks}.
+In: \bbtitle{Proceedings of the 34th International Conference on Machine
+  Learning}
+(\byear{2017})
+\end{bchapter}
+\endbibitem
+
+%%% 49
+\bibitem[\protect\citeauthoryear{Shapley}{1953}]{shapley1953}
+\begin{bchapter}
+\bauthor{\bsnm{Shapley}, \binits{L.S.}}:
+\bctitle{A value for $n$-person games}.
+In: \bbtitle{Contributions to the Theory of Games II}.
+\bpublisher{Princeton University Press}, \blocation{???}
+(\byear{1953})
+\end{bchapter}
+\endbibitem
+
+%%% 50
+\bibitem[\protect\citeauthoryear{Lundberg and Lee}{2017}]{lundberg2017shap}
+\begin{bchapter}
+\bauthor{\bsnm{Lundberg}, \binits{S.M.}},
+\bauthor{\bsnm{Lee}, \binits{S.-I.}}:
+\bctitle{A unified approach to interpreting model predictions}.
+In: \bbtitle{Advances in Neural Information Processing Systems 30}
+(\byear{2017})
+\end{bchapter}
+\endbibitem
+
+\end{thebibliography}
