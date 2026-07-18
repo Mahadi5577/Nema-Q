@@ -7,12 +7,16 @@
 \usepackage{multirow}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{amsthm}
-\usepackage{mathrsfs}
 \usepackage[title]{appendix}
 \usepackage{xcolor}
 \usepackage{textcomp}
 \usepackage{manyfoot}
 \usepackage{booktabs}
+
+% PDF outline: sections + subsections only. \paragraph heads under a
+% \section otherwise jump bookmark levels and leak math tokens into
+% PDF strings (hyperref warnings).
+\hypersetup{bookmarksdepth=2}
 
 \raggedbottom
 
