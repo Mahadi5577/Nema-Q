@@ -4,7 +4,7 @@
 
 *Extended version of ICEQT'26 paper ICE7405 (NEMA-Q). Target: Quantum Machine Intelligence.*
 
-> **DRAFT STATUS:** Headline numbers are now CONFIRMATORY (seeds 10–19, run 2026-07-17 from the frozen repository; manifests record git `8552c89`). Remaining `[PILOT]` tags mark pilot-only diagnostics (Citeseer collapse telemetry, masking/perturbation faithfulness magnitudes, XAI figures) — these are exploratory context, not registered outcomes. `[TO-FILL]`: Zenodo DOI, AI disclosure.
+> **DRAFT STATUS:** Headline numbers are now CONFIRMATORY (seeds 10–19, run 2026-07-17 from the frozen repository; manifests record git `8552c89`). Remaining `[PILOT]` tags mark pilot-only diagnostics (Citeseer collapse telemetry, masking/perturbation faithfulness magnitudes, XAI figures) — these are exploratory context, not registered outcomes. `[TO-FILL]`: Zenodo DOI at submission.
 
 ---
 
@@ -254,7 +254,6 @@ Component accounting turns a hybrid model from a monolithic claim into an audita
 
 **Funding.** No external funding.
 
-**AI usage disclosure.** `[TO-FILL at disclosure mode: venue-appropriate statement — code assistance and drafting support with human verification of all results and citations]`
 
 ---
 

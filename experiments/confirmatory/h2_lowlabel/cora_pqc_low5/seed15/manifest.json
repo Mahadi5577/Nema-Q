@@ -1,0 +1,82 @@
+{
+  "timestamp": "2026-07-18T10:38:16",
+  "git_hash": "369ebef41e018c586ccd1057124457a36999b56e",
+  "seed": 15,
+  "config": {
+    "data": {
+      "name": "cora",
+      "root": "data",
+      "split": "low_label",
+      "labels_per_class": 5,
+      "split_seed": 0
+    },
+    "model": {
+      "name": "nemaq",
+      "hidden": 64,
+      "dropout": 0.5,
+      "geometry": "hyperbolic",
+      "quantum_mode": "pqc",
+      "n_qubits": 4,
+      "q_depth": 2,
+      "branch_dim": 64,
+      "fused_dim": 64,
+      "fusion_mode": "residual",
+      "curvature": 1.0,
+      "learnable_curvature": true,
+      "shots": null
+    },
+    "train": {
+      "lr": 0.01,
+      "weight_decay": 0.0005,
+      "epochs": 500,
+      "patience": 100,
+      "aux_weight": 0.3,
+      "aux_anneal": true
+    },
+    "deterministic": true,
+    "device": "cuda"
+  },
+  "env": {
+    "python": "3.12.13",
+    "torch": "2.11.0+cu128",
+    "torch_geometric": "2.8.0",
+    "geoopt": "0.5.1",
+    "pennylane": "0.45.1",
+    "numpy": "2.0.2"
+  },
+  "metrics": {
+    "val_acc": 0.6180000305175781,
+    "test_acc": 0.6000000238418579,
+    "test_macro_f1": 0.579101968325008,
+    "test_min_class_f1": 0.3838383838383838,
+    "epochs_run": 111,
+    "param_counts": {
+      "total": 216799,
+      "branch_geo": 100097,
+      "branch_q": 6080,
+      "branch_bypass": 95936
+    },
+    "learned_curvature": 1.0421115159988403
+  },
+  "telemetry_summary": {
+    "geo": {
+      "final_grad_var": 3.6300073134043487e-06,
+      "min_grad_var": 2.0463446492868798e-09,
+      "n_steps": 111
+    },
+    "q": {
+      "final_grad_var": 1.388527834933484e-07,
+      "min_grad_var": 1.5150456444956717e-09,
+      "n_steps": 111,
+      "min_circuit_grad_var": 2.4643817653213773e-08,
+      "final_circuit_grad_var": 4.8496376621187665e-06,
+      "h3_pass_relative": true,
+      "h3_classical_reference_var": 3.680498350533412e-09
+    },
+    "bypass": {
+      "final_grad_var": 2.2753217976401174e-08,
+      "min_grad_var": 3.680498350533412e-09,
+      "n_steps": 111
+    }
+  }
+}

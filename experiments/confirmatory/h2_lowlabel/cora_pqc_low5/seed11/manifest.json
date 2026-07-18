@@ -1,0 +1,82 @@
+{
+  "timestamp": "2026-07-18T10:36:56",
+  "git_hash": "369ebef41e018c586ccd1057124457a36999b56e",
+  "seed": 11,
+  "config": {
+    "data": {
+      "name": "cora",
+      "root": "data",
+      "split": "low_label",
+      "labels_per_class": 5,
+      "split_seed": 0
+    },
+    "model": {
+      "name": "nemaq",
+      "hidden": 64,
+      "dropout": 0.5,
+      "geometry": "hyperbolic",
+      "quantum_mode": "pqc",
+      "n_qubits": 4,
+      "q_depth": 2,
+      "branch_dim": 64,
+      "fused_dim": 64,
+      "fusion_mode": "residual",
+      "curvature": 1.0,
+      "learnable_curvature": true,
+      "shots": null
+    },
+    "train": {
+      "lr": 0.01,
+      "weight_decay": 0.0005,
+      "epochs": 500,
+      "patience": 100,
+      "aux_weight": 0.3,
+      "aux_anneal": true
+    },
+    "deterministic": true,
+    "device": "cuda"
+  },
+  "env": {
+    "python": "3.12.13",
+    "torch": "2.11.0+cu128",
+    "torch_geometric": "2.8.0",
+    "geoopt": "0.5.1",
+    "pennylane": "0.45.1",
+    "numpy": "2.0.2"
+  },
+  "metrics": {
+    "val_acc": 0.6300000548362732,
+    "test_acc": 0.6080000400543213,
+    "test_macro_f1": 0.5710931521222528,
+    "test_min_class_f1": 0.4260355029585799,
+    "epochs_run": 138,
+    "param_counts": {
+      "total": 216799,
+      "branch_geo": 100097,
+      "branch_q": 6080,
+      "branch_bypass": 95936
+    },
+    "learned_curvature": 0.9805927872657776
+  },
+  "telemetry_summary": {
+    "geo": {
+      "final_grad_var": 1.8184984185154462e-07,
+      "min_grad_var": 2.3747139810126328e-09,
+      "n_steps": 138
+    },
+    "q": {
+      "final_grad_var": 2.9034790571813573e-08,
+      "min_grad_var": 1.4558272365405855e-09,
+      "n_steps": 138,
+      "min_circuit_grad_var": 7.841483018466988e-09,
+      "final_circuit_grad_var": 1.1132975714645e-06,
+      "h3_pass_relative": true,
+      "h3_classical_reference_var": 3.0284204033392825e-09
+    },
+    "bypass": {
+      "final_grad_var": 9.59188906080044e-09,
+      "min_grad_var": 3.0284204033392825e-09,
+      "n_steps": 138
+    }
+  }
+}

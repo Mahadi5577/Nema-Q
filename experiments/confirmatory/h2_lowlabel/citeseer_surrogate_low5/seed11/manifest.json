@@ -1,0 +1,79 @@
+{
+  "timestamp": "2026-07-18T10:48:25",
+  "git_hash": "369ebef41e018c586ccd1057124457a36999b56e",
+  "seed": 11,
+  "config": {
+    "data": {
+      "name": "citeseer",
+      "root": "data",
+      "split": "low_label",
+      "labels_per_class": 5,
+      "split_seed": 0
+    },
+    "model": {
+      "name": "nemaq",
+      "hidden": 64,
+      "dropout": 0.5,
+      "geometry": "hyperbolic",
+      "quantum_mode": "surrogate",
+      "n_qubits": 4,
+      "q_depth": 2,
+      "branch_dim": 64,
+      "fused_dim": 64,
+      "fusion_mode": "residual",
+      "curvature": 1.0,
+      "learnable_curvature": true,
+      "shots": null,
+      "gate_bias_init": -4.0
+    },
+    "train": {
+      "lr": 0.005,
+      "weight_decay": 0.0005,
+      "epochs": 500,
+      "patience": 100,
+      "aux_weight": 2.0,
+      "aux_anneal": true
+    },
+    "deterministic": true,
+    "device": "cuda"
+  },
+  "env": {
+    "python": "3.12.13",
+    "torch": "2.11.0+cu128",
+    "torch_geometric": "2.8.0",
+    "geoopt": "0.5.1",
+    "pennylane": "0.45.1",
+    "numpy": "2.0.2"
+  },
+  "metrics": {
+    "val_acc": 0.5120000243186951,
+    "test_acc": 0.484000027179718,
+    "test_macro_f1": 0.43576167466017135,
+    "test_min_class_f1": 0.047058823529411764,
+    "epochs_run": 242,
+    "param_counts": {
+      "total": 516177,
+      "branch_geo": 245377,
+      "branch_q": 15158,
+      "branch_bypass": 241216
+    },
+    "learned_curvature": 0.8010448217391968
+  },
+  "telemetry_summary": {
+    "geo": {
+      "final_grad_var": 3.3408671384904665e-08,
+      "min_grad_var": 3.575137297318065e-09,
+      "n_steps": 242
+    },
+    "q": {
+      "final_grad_var": 6.9020305026867845e-09,
+      "min_grad_var": 6.1288623065536285e-09,
+      "n_steps": 242
+    },
+    "bypass": {
+      "final_grad_var": 2.0099792052974408e-08,
+      "min_grad_var": 6.735469515462e-09,
+      "n_steps": 242
+    }
+  }
+}

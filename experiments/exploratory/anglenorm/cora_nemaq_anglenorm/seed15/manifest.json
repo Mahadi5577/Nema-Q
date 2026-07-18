@@ -1,0 +1,83 @@
+{
+  "timestamp": "2026-07-18T11:15:00",
+  "git_hash": "369ebef41e018c586ccd1057124457a36999b56e",
+  "seed": 15,
+  "config": {
+    "data": {
+      "name": "cora",
+      "root": "data",
+      "split": "public",
+      "labels_per_class": 5,
+      "split_seed": 0
+    },
+    "model": {
+      "name": "nemaq",
+      "hidden": 64,
+      "dropout": 0.5,
+      "geometry": "hyperbolic",
+      "quantum_mode": "pqc",
+      "n_qubits": 4,
+      "q_depth": 2,
+      "branch_dim": 64,
+      "fused_dim": 64,
+      "fusion_mode": "residual",
+      "curvature": 1.0,
+      "learnable_curvature": true,
+      "shots": null,
+      "angle_norm": "std"
+    },
+    "train": {
+      "lr": 0.01,
+      "weight_decay": 0.0005,
+      "epochs": 500,
+      "patience": 100,
+      "aux_weight": 0.3,
+      "aux_anneal": true
+    },
+    "deterministic": true,
+    "device": "cuda"
+  },
+  "env": {
+    "python": "3.12.13",
+    "torch": "2.11.0+cu128",
+    "torch_geometric": "2.8.0",
+    "geoopt": "0.5.1",
+    "pennylane": "0.45.1",
+    "numpy": "2.0.2"
+  },
+  "metrics": {
+    "val_acc": 0.628000020980835,
+    "test_acc": 0.6100000143051147,
+    "test_macro_f1": 0.5842982403320222,
+    "test_min_class_f1": 0.45739910313901344,
+    "epochs_run": 362,
+    "param_counts": {
+      "total": 216799,
+      "branch_geo": 100097,
+      "branch_q": 6080,
+      "branch_bypass": 95936
+    },
+    "learned_curvature": 0.551429271697998
+  },
+  "telemetry_summary": {
+    "geo": {
+      "final_grad_var": 7.415698632939893e-07,
+      "min_grad_var": 5.132940184005008e-10,
+      "n_steps": 362
+    },
+    "q": {
+      "final_grad_var": 1.277697805335265e-07,
+      "min_grad_var": 2.4427134093230052e-08,
+      "n_steps": 362,
+      "min_circuit_grad_var": 1.6451591022814682e-07,
+      "final_circuit_grad_var": 6.51598520562402e-06,
+      "h3_pass_relative": true,
+      "h3_classical_reference_var": 2.3327104692327794e-09
+    },
+    "bypass": {
+      "final_grad_var": 2.51220750868697e-08,
+      "min_grad_var": 2.3327104692327794e-09,
+      "n_steps": 362
+    }
+  }
+}
