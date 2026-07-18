@@ -1,0 +1,6 @@
+# EXPLORATORY (post-freeze, prereg section 7 amendment 2026-07-18): trained PQC
+# with std-normalized angle embedding — escapes the near-identity regime to
+# test whether H5 is conditional on the embedding scale.
+inherit: ../base.yaml
+data: { name: cora }
+model: { name: nemaq, angle_norm: std }

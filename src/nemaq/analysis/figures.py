@@ -222,19 +222,23 @@ def geometry_delta_plot(runs_root: str, delta_map: dict[str, float],
         seeds = sorted(set(sh) & set(se))
         if len(seeds) < 5:
             continue
-        diff = np.array([sh[s] - se[s] for s in seeds])
-        t, p_two = sps.ttest_rel([sh[s] for s in seeds], [se[s] for s in seeds])
+        a = np.array([sh[s] for s in seeds])
+        b = np.array([se[s] for s in seeds])
+        diff = a - b
+        # registered per-dataset test: one-sided Wilcoxon (hyp > euc)
+        p_one = (1.0 if np.allclose(diff, 0)
+                 else float(sps.wilcoxon(a, b, alternative="greater").pvalue))
         m, half = _mean_ci(diff)
         points.append({"dataset": ds, "delta": delta, "gain": m, "ci": half,
-                       "n": len(seeds), "t": float(t), "p": float(p_two)})
+                       "n": len(seeds), "p_one_sided": p_one})
     if len(points) < 2:
         raise ValueError("Need geometry-pair runs on >= 2 datasets")
 
     deltas = np.array([p["delta"] for p in points])
     gains = np.array([p["gain"] for p in points])
     rho, rho_p = sps.spearmanr(deltas, gains)
-    # Stouffer: one-sided z per dataset (H1 direction: gain > 0), pooled
-    zs = np.array([sps.norm.isf(sps.t.sf(p["t"], p["n"] - 1)) for p in points])
+    # Stouffer over the registered one-sided Wilcoxon tests (prereg section 1, H1)
+    zs = np.array([sps.norm.isf(p["p_one_sided"]) for p in points])
     z_pooled = zs.sum() / np.sqrt(len(zs))
     p_pooled = float(sps.norm.sf(z_pooled))
 

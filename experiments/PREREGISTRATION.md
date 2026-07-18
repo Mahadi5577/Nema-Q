@@ -130,3 +130,25 @@ buried footnote.
   recipes therefore read: GCN lr .05/wd 5e-4/dr .5, GAT lr .05/wd 5e-5/dr .5,
   HGCN lr .05/wd 5e-5/dr .2, NEMA-Q/E/R lr .05/aux .3/gate_bias −2 —
   each with patience 200.
+- 2026-07-18 (MLP correction): §3 lists MLP among models. The MLP baseline
+  was superseded during the pilot phase by two stronger controls occupying
+  the same role (trunk-only for the scaffold, NEMA-C surrogate for the
+  parameter-matched classical branch) and was never run in either seed
+  population. It is removed from the reporting plan; no test involving MLP
+  was ever part of the registered hypothesis family, so no correction
+  changes.
+- 2026-07-18 (H2 execution plan): the low-label half of H2 (registered in
+  §1 before any run) is executed as: NEMA-Q (pqc) vs NEMA-C (surrogate) at
+  5 labels per class, cora/citeseer/pubmed (disease excluded — ratio-split
+  synthetic dataset with no comparable low-label protocol), seeds 10–19,
+  dataset-locked recipes, seeded low-label splits shared across models,
+  one-sided Wilcoxon (pqc > surrogate) per dataset pooled by Stouffer.
+  The pooled H2 p enters the registered primary family {H1-pooled, H2, H5}
+  under Holm–Bonferroni as declared in §4. Declared before the runs.
+- 2026-07-18 (post-freeze exploratory knob, disclosed): `angle_norm: std`
+  added to the quantum branch (standardizes compressed pre-activations
+  before the tanh angle map, escaping the near-identity embedding regime
+  diagnosed in the paper §7). Default `none` preserves frozen behavior
+  bit-for-bit. Used only for an EXPLORATORY H5 re-test on Cora
+  (configs/ablations/cora_nemaq_anglenorm*.yaml); results are labeled
+  exploratory and enter no registered family.

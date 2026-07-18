@@ -27,8 +27,7 @@ def _observables(model, x):
     """Recompute the PQC observable vector [N, n_qubits] outside the graph."""
     qb = model.branches["q"]
     with torch.no_grad():
-        angles = torch.tanh(qb.compress(x)) * torch.pi
-        obs = qb.qlayer(angles.cpu()).to(x.device)
+        obs = qb.qlayer(qb.angles(x).cpu()).to(x.device)
     return obs
 
 

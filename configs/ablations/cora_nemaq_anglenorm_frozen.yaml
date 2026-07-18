@@ -1,0 +1,5 @@
+# EXPLORATORY (post-freeze): frozen-random PQC with std-normalized angle
+# embedding — the H5 control under the full-range embedding regime.
+inherit: ../base.yaml
+data: { name: cora }
+model: { name: nemaq, quantum_mode: frozen_random, angle_norm: std }

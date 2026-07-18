@@ -21,12 +21,20 @@ MAX_DEPTH = 4
 class QuantumBranch(nn.Module):
     def __init__(self, in_dim: int, n_qubits: int = 4, depth: int = 2,
                  out_dim: int = 16, frozen_random: bool = False,
-                 shots: int | None = None, seed: int = 0):
+                 shots: int | None = None, seed: int = 0,
+                 angle_norm: str = "none"):
         super().__init__()
         assert n_qubits <= MAX_QUBITS, f"n_qubits > {MAX_QUBITS} violates BP budget"
         assert depth <= MAX_DEPTH, f"depth > {MAX_DEPTH} violates BP budget"
+        assert angle_norm in ("none", "std"), f"angle_norm={angle_norm}"
         self.n_qubits = n_qubits
         self.depth = depth
+        # "std": standardize the compressed pre-activations per dimension
+        # before tanh, so the embedding uses the full +-pi angle range instead
+        # of the near-identity regime that sparse features induce (the regime
+        # the paper diagnoses as rationalizing H5). Post-freeze EXPLORATORY
+        # knob — default "none" preserves the frozen behavior exactly.
+        self.angle_norm = angle_norm
 
         # classical compressor: features -> rotation angles
         self.compress = nn.Linear(in_dim, n_qubits)
@@ -52,8 +60,15 @@ class QuantumBranch(nn.Module):
 
         self.project = nn.Linear(n_qubits, out_dim)
 
+    def angles(self, x) -> torch.Tensor:
+        """Compressed features -> bounded rotation angles [N, n_qubits]."""
+        pre = self.compress(x)
+        if self.angle_norm == "std":
+            pre = (pre - pre.mean(0)) / (pre.std(0) + 1e-8)
+        return torch.tanh(pre) * torch.pi
+
     def forward(self, x, edge_index=None):
-        angles = torch.tanh(self.compress(x)) * torch.pi  # bounded angles
+        angles = self.angles(x)
         # default.qubit simulates the statevector on CPU; keep the circuit
         # weights and inputs there even when the rest of the model is on GPU,
         # then return to the model device for fusion.

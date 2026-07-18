@@ -37,13 +37,16 @@ class NemaQ(nn.Module):
             raise ValueError(f"geometry={geometry}")
 
         nq, depth = cfg.get("n_qubits", 4), cfg.get("q_depth", 2)
+        anorm = cfg.get("angle_norm", "none")
         if qmode == "pqc":
             self.branches["q"] = QuantumBranch(in_dim, nq, depth, emb,
-                                               shots=cfg.get("shots"))
+                                               shots=cfg.get("shots"),
+                                               angle_norm=anorm)
         elif qmode == "frozen_random":
             self.branches["q"] = QuantumBranch(in_dim, nq, depth, emb,
                                                frozen_random=True,
-                                               seed=cfg.get("q_seed", 0))
+                                               seed=cfg.get("q_seed", 0),
+                                               angle_norm=anorm)
         elif qmode == "surrogate":
             self.branches["q"] = SurrogateBranch(in_dim, nq, depth, emb)
         elif qmode != "off":
