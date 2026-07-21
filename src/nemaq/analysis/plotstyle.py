@@ -8,10 +8,14 @@ import matplotlib.pyplot as plt
 PUB_RC = {
     "font.family": "serif",
     "font.serif": ["Times New Roman", "DejaVu Serif"],
-    "font.size": 12,
-    "axes.titlesize": 13,
-    "axes.labelsize": 11,
-    "legend.fontsize": 9,
+    # Sized for panels rendered at ~0.49*textwidth in a 2x2 grid: larger base
+    # so tick/label/title text stays legible after down-scaling on the page.
+    "font.size": 15,
+    "axes.titlesize": 16,
+    "axes.labelsize": 15,
+    "xtick.labelsize": 13,
+    "ytick.labelsize": 13,
+    "legend.fontsize": 12,
     "figure.dpi": 300,
     "savefig.bbox": "tight",
 }

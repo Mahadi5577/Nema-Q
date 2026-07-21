@@ -138,14 +138,14 @@ def paired_diff_plot(runs_root: str, dataset: str, model_a: str, model_b: str,
     p = sps.wilcoxon(a, b).pvalue if not np.allclose(diff, 0) else 1.0
 
     apply_style()
-    fig, axes = plt.subplots(1, 2, figsize=(11, 4.5),
+    fig, axes = plt.subplots(1, 2, figsize=(7.5, 3.4),
                              gridspec_kw={"width_ratios": [1.2, 1]})
     ax = axes[0]
     for i, s in enumerate(seeds):
-        ax.plot([0, 1], [b[i], a[i]], "-o", ms=4, alpha=0.6,
+        ax.plot([0, 1], [b[i], a[i]], "-o", ms=5, alpha=0.6,
                 color="#2ca02c" if diff[i] > 0 else "#d62728")
     ax.set_xticks([0, 1])
-    ax.set_xticklabels([_label(model_b), _label(model_a)], fontsize=10)
+    ax.set_xticklabels([_label(model_b), _label(model_a)])
     ax.set_ylabel("Test accuracy")
     ax.set_title(f"{dataset}: per-seed paired comparison")
     ax.grid(True, axis="y", linestyle=":", alpha=0.6)
@@ -158,7 +158,7 @@ def paired_diff_plot(runs_root: str, dataset: str, model_a: str, model_b: str,
                label=f"mean {diff.mean() * 100:+.1f} pts")
     ax.set_xlabel(f"{_label(model_a)} − {_label(model_b)}")
     ax.set_title(f"Paired diff (n={len(seeds)}, Wilcoxon p={p:.3g})")
-    ax.legend(fontsize=9)
+    ax.legend()
     ax.grid(True, axis="y", linestyle=":", alpha=0.6)
     plt.tight_layout()
     plt.savefig(save_path)
@@ -178,14 +178,13 @@ def stability_plot(runs_root: str, dataset: str, save_path: str,
     rows.sort(key=lambda r: r[1])
 
     apply_style()
-    fig, ax = plt.subplots(figsize=(8, 4.5))
+    fig, ax = plt.subplots(figsize=(5, 4))
     xs = np.arange(len(rows))
     colors = ["#d62728" if "softmax" in n.lower() or "surrogate" in n.lower()
               else "#1f77b4" for n, _, _ in rows]
     ax.bar(xs, [r[1] for r in rows], color=colors, alpha=0.85)
     ax.set_xticks(xs)
-    ax.set_xticklabels([r[0] for r in rows], rotation=30, ha="right",
-                       fontsize=9)
+    ax.set_xticklabels([r[0] for r in rows], rotation=30, ha="right")
     ax.set_ylabel("Across-seed std of test accuracy")
     ax.set_title(f"{dataset} — seed stability by model")
     ax.grid(True, axis="y", linestyle=":", alpha=0.6)

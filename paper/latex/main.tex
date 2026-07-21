@@ -234,13 +234,13 @@ Disease (tuned) & $0.908\pm0.009$ & $0.905\pm0.009$ & $-0.4$ & 4/10 & 0.837 & 1.
 
 The registered falsifier --- trained significantly better on a majority of datasets --- is approached nowhere: the trained circuit does not significantly beat its frozen control on a single dataset, while the frozen control is ahead in mean on three of four and significantly ahead on Cora at the uncorrected level (family-corrected $p=0.074$, marginal). The pilot population showed the same ordering with larger gaps (Cora $+3.9$, 10/10 seeds; Citeseer $+1.4$, $p=0.027$), so across twenty independent seeds per dataset the qualitative statement is stable: freezing is never worse, and on the dataset where the hybrid struggles most it is reliably better. Section~\ref{sec:discussion} discusses mechanism; Sect.~\ref{sec:failure} supplies the input-regime half of it.
 
-\begin{figure}[t]
+\begin{figure}[p]
 \centering
-\includegraphics[width=0.49\textwidth]{figs/cora_paired_frozen_vs_trained.pdf}\hfill
-\includegraphics[width=0.49\textwidth]{figs/citeseer_paired_frozen_vs_trained.pdf}\\[2pt]
-\includegraphics[width=0.49\textwidth]{figs/pubmed_paired_frozen_vs_trained.pdf}\hfill
-\includegraphics[width=0.49\textwidth]{figs/disease_paired_frozen_vs_trained.pdf}
-\caption{H5 paired-seed plots, one panel per dataset: per-seed test accuracy of trained PQC (NEMA-Q) vs.\ frozen-random PQC (NEMA-R) connected by seed. Slope direction, not vertical position, carries the H5 verdict.}
+\includegraphics[width=0.82\textwidth]{figs/cora_paired_frozen_vs_trained.pdf}\\[3pt]
+\includegraphics[width=0.82\textwidth]{figs/citeseer_paired_frozen_vs_trained.pdf}\\[3pt]
+\includegraphics[width=0.82\textwidth]{figs/pubmed_paired_frozen_vs_trained.pdf}\\[3pt]
+\includegraphics[width=0.82\textwidth]{figs/disease_paired_frozen_vs_trained.pdf}
+\caption{H5 paired-seed plots, one row per dataset (top to bottom: Cora, Citeseer, Pubmed, Disease). Left panel of each row: per-seed test accuracy of frozen-random PQC (NEMA-R) vs.\ trained PQC (NEMA-Q) connected by seed (green = frozen ahead). Right panel: the paired-difference distribution with its mean and Wilcoxon $p$. Slope direction, not vertical position, carries the H5 verdict.}
 \label{fig:h5paired}
 \end{figure}
 
@@ -290,13 +290,19 @@ Citeseer & 0.550 & $+0.6$ & 0.254 & $0.22$ \\
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.6\textwidth]{figs/h1_geometry_delta.pdf}\\[2pt]
-\includegraphics[width=0.49\textwidth]{figs/cora_paired_geometry.pdf}\hfill
-\includegraphics[width=0.49\textwidth]{figs/citeseer_paired_geometry.pdf}\\[2pt]
-\includegraphics[width=0.49\textwidth]{figs/pubmed_paired_geometry.pdf}\hfill
-\includegraphics[width=0.49\textwidth]{figs/disease_paired_geometry.pdf}
-\caption{Geometry $\times$ $\delta$. Top: paired hyperbolic$-$Euclidean gain (mean $\pm$ 95\% CI) against dataset $\delta_{\text{mean}}$; the preregistered H1(b) prediction is a negative slope, the observed trend is positive. The in-panel pooled annotation is the registered statistic (Stouffer over one-sided Wilcoxon tests). Bottom: per-dataset paired-seed plots (NEMA-Q vs.\ NEMA-E).}
+\includegraphics[width=0.72\textwidth]{figs/h1_geometry_delta.pdf}
+\caption{Geometry $\times$ $\delta$: paired hyperbolic$-$Euclidean gain (mean $\pm$ 95\% CI) against dataset $\delta_{\text{mean}}$. The preregistered H1(b) prediction is a negative slope; the observed trend is positive. The in-panel pooled annotation is the registered statistic (Stouffer over one-sided Wilcoxon tests). Per-dataset paired-seed plots are in Fig.~\ref{fig:geopaired}.}
 \label{fig:geometry}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.82\textwidth]{figs/cora_paired_geometry.pdf}\\[3pt]
+\includegraphics[width=0.82\textwidth]{figs/citeseer_paired_geometry.pdf}\\[3pt]
+\includegraphics[width=0.82\textwidth]{figs/pubmed_paired_geometry.pdf}\\[3pt]
+\includegraphics[width=0.82\textwidth]{figs/disease_paired_geometry.pdf}
+\caption{H1 per-dataset paired-seed plots, one row per dataset (top to bottom: Cora, Citeseer, Pubmed, Disease). Left panel of each row: per-seed test accuracy of trained hyperbolic NEMA-Q vs.\ its Euclidean control NEMA-E connected by seed. Right panel: the paired-difference distribution with its mean and Wilcoxon $p$.}
+\label{fig:geopaired}
 \end{figure}
 
 \paragraph{H1(a) direction: holds on its registered falsifier, marginal under family correction} Stouffer-pooled one-sided $p=0.040$ ($Z=1.75$) across the four datasets under their locked recipes --- the registered falsifier (raw pooled $p \ge 0.05$) is not triggered, and the pooled direction is positive. Under the completed primary-family Holm correction, however, the pooled $p$ rises to $0.080$ (Sect.~\ref{sec:remaining}), so we do not claim family-wise significance. The pooled evidence is also weaker than the pilot suggested (pilot $p\approx0.004$, which mixed recipe conditions across datasets; the confirmatory number supersedes it). Only Pubmed reaches per-dataset significance ($p=0.014$, $d=0.99$).
