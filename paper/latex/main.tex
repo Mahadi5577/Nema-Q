@@ -332,13 +332,13 @@ The conference version's reviewers noted, correctly, that gradient saliency with
 
 Across the four datasets, QOA passes 11 of 12 checks in the pilot population: masking and perturbation faithfulness hold everywhere (top-attributed observables produce strictly larger logit drops and higher flip rates than bottom-attributed ones on every dataset; per-dataset magnitudes in Fig.~\ref{fig:faithfulness}), and randomization passes on Cora, Citeseer, and Pubmed. The randomization check was re-run per seed in the confirmatory population and replicates exactly: mean $|\rho| = 0.24 / 0.10 / 0.18$ on Cora / Citeseer / Pubmed (pass) versus $0.56$ on Disease (fail). The single failure is thus stable across twenty seeds: on a two-class task whose quantum branch operates in the near-constant regime of Sect.~\ref{sec:failure} --- and whose gradient telemetry intermittently fails H3 (Sect.~\ref{sec:remaining}) --- the attribution pattern is dominated by input structure rather than learned parameters, precisely the pathology the Adebayo check exists to expose. We therefore report QOA as validated on the three citation networks and flag Disease attributions as input-dominated rather than model-specific. A harness that can fail, and does --- consistently, on the same dataset, in both seed populations --- is the point: attribution methods should earn trust per dataset, not by construction.
 
-\begin{figure}[t]
+\begin{figure}[p]
 \centering
-\includegraphics[width=0.49\textwidth]{figs/cora_xai_02_qoa_faithfulness.pdf}\hfill
-\includegraphics[width=0.49\textwidth]{figs/citeseer_xai_02_qoa_faithfulness.pdf}\\[2pt]
-\includegraphics[width=0.49\textwidth]{figs/pubmed_xai_02_qoa_faithfulness.pdf}\hfill
-\includegraphics[width=0.49\textwidth]{figs/disease_xai_02_qoa_faithfulness.pdf}
-\caption{QOA faithfulness harness, one panel per dataset (pilot models): masking logit-drops (top vs.\ bottom observable), perturbation flip rates (top vs.\ bottom), and the randomization Spearman $\rho$ against its $0.5$ threshold. Disease fails the randomization check only.}
+\includegraphics[width=\textwidth]{figs/cora_xai_02_qoa_faithfulness.pdf}\\[4pt]
+\includegraphics[width=\textwidth]{figs/citeseer_xai_02_qoa_faithfulness.pdf}\\[4pt]
+\includegraphics[width=\textwidth]{figs/pubmed_xai_02_qoa_faithfulness.pdf}\\[4pt]
+\includegraphics[width=\textwidth]{figs/disease_xai_02_qoa_faithfulness.pdf}
+\caption{QOA faithfulness harness, one row per dataset (top to bottom: Cora, Citeseer, Pubmed, Disease; pilot models). Each row's three panels are the masking logit-drops (top vs.\ bottom observable), perturbation flip rates (top vs.\ bottom), and the randomization Spearman $\rho$ against its $0.5$ threshold. Masking and perturbation faithfulness hold on all four datasets; the randomization check passes on the three citation networks and fails on Disease only.}
 \label{fig:faithfulness}
 \end{figure}
 
