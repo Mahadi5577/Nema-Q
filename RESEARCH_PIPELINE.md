@@ -1,6 +1,6 @@
 # NEMA-Q — Q1 Research Pipeline
 
-**Project:** NEMA-Q: Non-Euclidean Memory-Augmented Quantum Graph Neural Network
+**Project:** NEMA-Q — a hybrid graph neural network (hyperbolic encoder + variational quantum circuit + classical GCN bypass under gated residual fusion). NEMA-Q is used as a proper name; the conference-era "Memory-Augmented" expansion is dropped as unimplemented (see G9), and the journal paper expands the acronym nowhere.
 **Investigator:** MD Nurol Amin Mahadi
 **Pipeline authored:** 2026-07-16
 **Target:** Q1 journal submission (see §8 for venue analysis)
