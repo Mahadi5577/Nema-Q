@@ -2,7 +2,7 @@
 
 **MD Nurol Amin** — Daffodil International University, Dhaka, Bangladesh
 
-*Extended version of ICEQT'26 paper ICE7405 (NEMA-Q). Target: Quantum Machine Intelligence.*
+*Target: Quantum Machine Intelligence.*
 
 > **DRAFT STATUS:** Headline numbers are now CONFIRMATORY (seeds 10–19, run 2026-07-17 from the frozen repository; manifests record git `8552c89`). Remaining `[PILOT]` tags mark pilot-only diagnostics (Citeseer collapse telemetry, masking/perturbation faithfulness magnitudes, XAI figures) — these are exploratory context, not registered outcomes. `[TO-FILL]`: Zenodo DOI at submission.
 
@@ -20,7 +20,7 @@ Hybrid quantum–classical models are typically evaluated by a single aggregate 
 
 A recurring pattern in hybrid quantum–classical machine learning is the composite architecture: a quantum circuit embedded among classical modules, evaluated end-to-end, and reported with a single accuracy number. When such a model performs well, the quantum component absorbs the credit; when it performs poorly, the result is rarely published. Neither outcome tells us what the circuit actually contributed. Recent benchmarking critiques identify exactly this attribution gap — quantum models compared against untuned classical baselines, under undisclosed budgets, with no isolation of components — as a dominant methodological bottleneck in the field [refs: QML benchmarking cluster].
 
-This paper treats the attribution question as the primary object of study. We take NEMA-Q (introduced in the conference version of this work) — a hybrid graph neural network that fuses a hyperbolic (Poincaré-ball) encoder, a variational quantum circuit branch, and a classical GCN bypass through gated residual fusion — and subject it to *component accounting*: a protocol in which every architectural claim is paired with a control reachable by configuration swap alone, evaluated under paired seeds and identical splits, with per-branch gradient telemetry recorded throughout, and with attribution methods whose own faithfulness is tested rather than assumed.
+This paper treats the attribution question as the primary object of study. We take NEMA-Q — a hybrid graph neural network that fuses a hyperbolic (Poincaré-ball) encoder, a variational quantum circuit branch, and a classical GCN bypass through gated residual fusion — and subject it to *component accounting*: a protocol in which every architectural claim is paired with a control reachable by configuration swap alone, evaluated under paired seeds and identical splits, with per-branch gradient telemetry recorded throughout, and with attribution methods whose own faithfulness is tested rather than assumed.
 
 The accounting produces results that are individually simple but jointly uncomfortable for standard narratives:
 
@@ -32,7 +32,6 @@ The accounting produces results that are individually simple but jointly uncomfo
 
 None of these findings is visible in an aggregate accuracy table, and the third is invisible without a δ-stratified multi-dataset design. Our contributions, in order of generality: (C1) the component-accounting protocol itself — configuration-swap controls, paired preregistered statistics, per-branch telemetry — as a reusable evidentiary standard for hybrid QML; (C2) the frozen-versus-trained control and its outcome, which we argue should become a mandatory baseline for any trained quantum module; (C3) Quantum Observable Attribution with a faithfulness harness that can fail, and once does; (C4) the fusion failure-mode analysis and the branch signal-variance preflight check it yields — a one-line statistic computable before training.
 
-**Relation to the conference version.** The ICEQT'26 paper introduced NEMA-Q and Quantum Observable Attribution on Cora only, with five seeds and no tuned baselines. This version answers every methodological objection raised in its review: tuned GCN/GAT/HGCN baselines under identical splits with parameter counts (§4); three additional datasets stratified by δ-hyperbolicity (§4.1); a faithfulness validation harness for QOA — masking, perturbation, and model-randomization checks (§8); paired statistical tests with multiple-comparison control for all ablation gaps (§4.3); and full reproduction detail via per-run manifests (§4.4). The frozen-vs-trained finding, the fusion failure-mode analysis, and the geometry-mechanism falsification are new.
 
 ## 2. Related Work
 
@@ -113,7 +112,7 @@ We evaluate on Cora, Citeseer, Pubmed (Planetoid public splits) and Disease [Cha
 
 Preregistered before the confirmatory runs (repository commit `4605c73`, frozen 2026-07-17):
 
-- **H1 (geometry, two-part).** (a) Direction: hyperbolic > parameter-matched Euclidean (NEMA-Q vs. NEMA-E), pooled across datasets by Stouffer's Z over per-dataset one-sided Wilcoxon tests. The pooled test is primary because the conference pilot showed single-dataset comparisons are underpowered at n=10 seeds (Cora paired d=0.44 implies ~40 seeds for 80% power alone). (b) Mechanism: paired gain decreases with δ (Spearman over datasets). Part (b) is the standard literature claim; we register both so that either can fail independently. *Falsifiers:* pooled p ≥ 0.05 (a); no negative δ–gain correlation (b).
+- **H1 (geometry, two-part).** (a) Direction: hyperbolic > parameter-matched Euclidean (NEMA-Q vs. NEMA-E), pooled across datasets by Stouffer's Z over per-dataset one-sided Wilcoxon tests. The pooled test is primary because an initial single-dataset (Cora) analysis showed such comparisons are underpowered at n=10 seeds (Cora paired d=0.44 implies ~40 seeds for 80% power alone). (b) Mechanism: paired gain decreases with δ (Spearman over datasets). Part (b) is the standard literature claim; we register both so that either can fail independently. *Falsifiers:* pooled p ≥ 0.05 (a); no negative δ–gain correlation (b).
 - **H2 (quantum vs. surrogate).** NEMA-Q > NEMA-C at ≤5 labels per class, with the gap closing at standard label rates; paired Wilcoxon per (dataset, label rate). *Falsifier:* surrogate matches the PQC at all label rates.
 - **H3 (trainability telemetry).** PQC circuit-weight gradient variance stays within two orders of magnitude of the best classical branch's gradient variance on ≥9/10 seeds — a relative criterion, because absolute barren-plateau floors from the literature do not transfer to a trained hybrid; the classical branches are the matched healthy-gradient reference at the same loss scale. *Falsifier:* sustained relative variance collapse.
 - **H4 (gate–attribution validity).** Fusion gate mass tracks leave-branch-out accuracy deltas: Spearman ρ > 0.5 per branch, pooled across datasets. *Falsifier:* ρ ≤ 0.5.
@@ -214,7 +213,7 @@ $$\mathrm{QOA}(i,k) \;=\; \frac{\partial\, \ell_{i,\hat{y}_i}}{\partial\, o_{ik}
 
 gradient × input over the observable vector. Two properties matter. First, the attribution target is neither the circuit's gates [arXiv:2301.09138] nor the input features, but the interface where quantum information becomes classical feature — so QOA answers the hybrid-specific question: *which physical measurements does the classical readout actually use?* Second, because $o_i$ is recomputed exactly (statevector simulation) and substituted as a leaf, the method needs no relaxation or sampling; it is exact for the model as trained.
 
-The conference version's reviewers noted, correctly, that gradient saliency without faithfulness evidence is decoration. The extension supplies a three-check harness, run per dataset on the trained pilot models:
+Gradient saliency without faithfulness evidence is decoration; we therefore pair QOA with a three-check harness, run per dataset on the trained pilot models:
 
 1. **Masking faithfulness:** zeroing the top-attributed observable per node (k=1) must reduce the predicted-class logit more than zeroing the bottom-attributed one: pass iff mean drop(top) > mean drop(bottom) over test nodes.
 2. **Perturbation test:** Gaussian noise (σ=0.25) injected on the top-attributed observable must flip more predictions than on the bottom-attributed one: pass iff flip-rate(top) > flip-rate(bottom).
@@ -226,7 +225,7 @@ Across the four datasets, QOA passes 11 of 12 checks in the pilot population `[P
 
 We acknowledge the out-of-distribution critique of masking-style fidelity metrics [GInX-Eval]: zeroed observables are off-manifold inputs. The randomization check is immune to this critique, which is why the harness requires all three verdicts rather than any one.
 
-The broader XAI suite (Appendix D) ports the conference version's five methods to the multi-dataset setting: integrated gradients on input features; QOA class×observable heatmaps; Poincaré-disk visualization of the geo branch (2-D PCA of the tangent output, exp-mapped at learned curvature); gradient-attributed per-node quantum contribution ratio r_Q; and exact branch-level Shapley values (2^B coalitions over branches — exact, unlike sampled KernelSHAP, and aligned with the leave-branch-out ground truth of H4).
+The broader XAI suite (Appendix D) comprises five complementary methods across all datasets: integrated gradients on input features; QOA class×observable heatmaps; Poincaré-disk visualization of the geo branch (2-D PCA of the tangent output, exp-mapped at learned curvature); gradient-attributed per-node quantum contribution ratio r_Q; and exact branch-level Shapley values (2^B coalitions over branches — exact, unlike sampled KernelSHAP, and aligned with the leave-branch-out ground truth of H4).
 
 ## 9. Discussion
 
