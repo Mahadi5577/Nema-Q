@@ -1,5 +1,8 @@
 # SESSION_CONTEXT — NEMA-Q Q1 Extension (handoff, 2026-07-17)
 
+## 2026-07-24 CORRECTION: STANDALONE paper, NOT a conference extension
+User did NOT submit to any conference. ICE7405.pdf + review = context material only. All conference/ICEQT'26/'extended version'/referee-response framing stripped from the paper (commit `7af2e2d`). Do not reintroduce it. Target venue: Quantum Machine Intelligence (standalone submission).
+
 ## CONFIRMATORY RESULTS IN (seeds 10–19, run 2026-07-17, git 8552c89 in manifests; `experiments/confirmatory/runs/`, 300 manifests + 40 h4.json)
 
 - **H5:** falsifier never triggered. Cora +4.45 8/10 p=.019 d=.87 (Holm-adj .074, marginal); pubmed +0.78 p=.169; citeseer +0.32 ns; disease −0.37 ns. Verdict: frozen never measurably worse, sig better on Cora (uncorrected).
@@ -20,7 +23,7 @@
 - QMI sn-jnl template extracted to `paper/sn-template/sn-article-template/` (sn-jnl.cls; use `sn-mathphys-num` bst for numeric citations).
 - Remaining: §9/appendices expansion to ~7k if desired; Phase 7 LaTeX conversion; integrity gate; `[TO-FILL]` items below unchanged.
 
-**Project:** nemaq — ICEQT'26 accepted (ICE7405, acceptance email = `ICE7405.pdf`; referee report inside it) → Q1 extension for **Quantum Machine Intelligence** (Springer, sn-jnl, numeric citations).
+**Project:** nemaq — STANDALONE Q1 paper for **Quantum Machine Intelligence** (Springer, sn-jnl, numeric citations). (`ICE7405.pdf` + review = context material only; NOT a conference submission — see correction banner at top.)
 **Track:** component accounting + explainability. NOT accuracy chasing.
 **Workflow:** all training runs in Colab via `NEMA_Q_colab.ipynb` (77 cells, self-contained `%%writefile` cells mirroring `src/`). Local torch is BROKEN (WinError 193) — never run training locally; local repo is source of truth for code, Colab executes.
 **Colab discipline:** after editing any `%%writefile` cell → rerun it → reload module in a SEPARATE cell (`importlib.reload`, leaf module first) → never paste reload code inside writefile cells (broke 3× this session).
